@@ -93,11 +93,17 @@ body('first_Name')
                 });
   
       const token = newToken(user);
+<<<<<<< HEAD
       // res.status(201).json({ user, token });
      user.save(err => {
       err?console.log(err):res.send('successfull created Account')
      });
 
+=======
+      res.status(201).json({ user, token });
+      console.log(user,token)
+      
+>>>>>>> 5e410e8ebbbc2c55e4a97b9bcb2fa863152d9a61
     } catch (e) {
       // return res.status(500).json({ status: "failed", message: e.message });
 
