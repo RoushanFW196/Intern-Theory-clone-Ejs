@@ -10,7 +10,8 @@ const { body , validationResult } = require('express-validator');
 const router = express.Router();
 
 const RegisterStudent = require('../models/registerStudent.model');
-const upload=require('../middlewares/upload')
+const upload=require('../middlewares/upload');
+const e = require('express');
 
 
 
@@ -92,11 +93,18 @@ body('first_Name')
                 });
   
       const token = newToken(user);
-      res.status(201).json({ user, token });
-      console.log(user,token)
+      // res.status(201).json({ user, token });
+     user.save(err => {
+      err?console.log(err):res.send('successfull created Account')
+     });
 
     } catch (e) {
-      return res.status(500).json({ status: "failed", message: e.message });
+      // return res.status(500).json({ status: "failed", message: e.message });
+
+     var message = e.message
+      res.render('register/registerAsStudent' , {
+        message
+      })
     }
   });
   
@@ -107,7 +115,7 @@ router.get('/new' , async ( req,res) => {
         const registerStudent = await RegisterStudent.find().lean().exec();
         // res.status(201).send(registerStudent)
         return res.render('register/registerAsStudent',{
-      
+          message : ""
         })
 
     }catch (e) {
