@@ -94,7 +94,7 @@ body('first_Name')
       const token = newToken(user);
       res.status(201).json({ user, token });
       console.log(user,token)
-
+      
     } catch (e) {
       return res.status(500).json({ status: "failed", message: e.message });
     }
