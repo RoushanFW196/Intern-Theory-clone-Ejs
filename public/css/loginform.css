@@ -110,7 +110,15 @@
     border: none;
     border-bottom: 1px solid gray;
 }
-
+.loginInputs{
+    display: block;
+    outline: none;
+    width: 95%;
+    margin: 1rem .3rem;
+    padding: .4rem;
+    border: none;
+    border-bottom: 1px solid gray;
+}
 .not_account {
     display: flex;
     justify-content: center;
