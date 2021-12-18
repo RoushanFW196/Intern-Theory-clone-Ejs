@@ -43,8 +43,17 @@ async(req,res)=>{
     }catch(e){
         return res.status(500).json({status:"failed",message:e.message})
     }
-
  })
+
+
+ router.get('/profile/:id',async function (req,res){
+    const user=await RegisterStudent.findById(req.params.id).lean().exec()
+    return res.render("register/studentprofile",{
+        user
+    })
+})
+
+
 
 
  router.get('/new' , async ( req,res) => {
@@ -66,6 +75,11 @@ async(req,res)=>{
 })
 
 
+
+
+
+
+
 router.get('/company/new' , async ( req,res) => {
     
    try{
@@ -83,7 +97,26 @@ router.get('/company/new' , async ( req,res) => {
    }
 })
 
- 
+
+
+
+router.patch('/:id', async ( req,res) => {
+    console.log("tt")
+    try{
+     
+      const user=await RegisterStudent.findByIdAndUpdate(req.params.id,req.body,{new:true}).lean().exec()
+      console.log(user)
+        return res.render('register/studentprofile.ejs',{
+          user,
+        })
+    }catch (e) {
+        res.status(401).json(
+            {
+                status : 'Failed' ,
+                message : e.message,
+            });
+    }
+  })
 
  module.exports =router;
 

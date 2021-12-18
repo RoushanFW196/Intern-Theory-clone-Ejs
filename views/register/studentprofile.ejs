@@ -589,67 +589,65 @@
         <%- include('../partials/navbar') %>
     </div>
       <div id="box">
-        <div id="leftpicbox"></div>
+        <div id="leftpicbox">
+
+        </div>
       
         <div id="rightdetailbox">
 
             <div id="d1"></div>
+
             <div id="d2">
                 <span id=upprsn>
                     <i class="fas fa-pen-square"></i>
                 </span>
 
                 <h5>Personal Details</h5>
-                
-              
-   
-
-            
-
+  
                  <div class="dtl">
                      <div>Name</div>
-                     
-                    
+           
+                     <div id="n"><%= user.first_Name +" " +user.last_name %></div>  
                  </div>
 
               <div class="dtl">
                   <div>Gender</div>
-                  
+                  <div id="g"><%=user.gender%></div>
               </div>
 
                <div class="dtl">
                    <div>DOB</div>
-                  
+                   <div id="d"><%=user.dob%></div>
                </div>
 
                <div class="dtl">
-                    <div>Languages</div>
-                   
+                   <div>Languages</div>
+                   <div id="l"><%=user.language%></div>
                </div>
 
                <div class="dtl">
                    <div>Hobbies</div>
-                 
+                   <div id="h"><%=user.hobby%></div>
                </div>
 
                <div class="dtl">
                    <div>Achievements</div>
-                
+                   <div id="a"><%=user.achivement%></div>
                </div>
 
    <div class="dtl">
        <div>Skills</div>
-      
+       <div id="s"><%=user.skill%></div>
    </div>
 
     <div class="dtl">
         <div>Preferences</div>
-       
+        <div id="p"><%=user.preference%></div>
     </div>
 
            <div class="dtl">
                <div>About</div>
-            
+               <div id="ab"><%=user.about%></div>
            </div>
 
 
@@ -665,22 +663,22 @@
   <h5>Contact Details</h5>
   <div  class="dtl">
       <div>Email ID</div>
-     
+      <div id="mail"><%=user.email%></div>
   </div>
 
     <div  class="dtl">
         <div>Mobile Number</div>
-      
+        <div id="no"><%=user.mobile%></div>
     </div>
 
      <div  class="dtl">
          <div>Facebook Account</div>
-         <div id="fbac"></div>
+         <div id="fbac"><%=user.fb%></div>
      </div>
 
      <div  class="dtl">
          <div>Google Account</div>
-         <div id="gac"></div>
+         <div id="gac"><%=user.google%></div>
      </div>
 
 </div>
@@ -693,19 +691,19 @@
      <h5>Address Details</h5>
      <div class="dtl">
          <div>Address</div>
-        
+         <div id="ad"><%= user.address%></div>
      </div>
      <div class="dtl">
          <div>City</div>
-       
+         <div id="ct"><%=user.city%></div>
      </div>
      <div class="dtl">
          <div>State</div>
-         <div id="st"></div>
+         <div id="st"><%=user.state%></div>
      </div>
      <div class="dtl">
          <div>Pincode</div>
-       
+         <div id="pn"><%= user.pin%></div>
      </div>
 
 </div>
@@ -717,7 +715,10 @@
     </span>
 
       <h5>Educational Details</h5>
-        
+        <h3><%=user.leveledu%></h3>
+        <h3><%=user.institute%></h3>
+        <h3><%=user.degree%></h3>
+        <h3><%=user.selyear%></h3>
   </div>
 
 
@@ -731,16 +732,13 @@
 
 
 
-
-
-
  
   <div id="update_personal_details">
-      <form action="/profile",method="POST" enctype="multipart/form-data",>
+      <form href="" onsubmit="studentUpdate(event,`<%=user._id %>`)" >
     <h1>Update Personal Details</h1>
     <input type="text" placeholder=" Enter Your First Name*" id="fname" name="first_name"><br>
     <input type="text" placeholder=" Enter Your Last Name*" id="lname" name="last_name"><br>
-        <!-- <select id="gender" placeholder="Gender*" name="Gender">
+        <select id="gender" placeholder="Gender*" name="Gender">
            <option value="Male">Male</option>
            <option value="Female">Female</option>
            <option value="Others">Others</option>
@@ -781,11 +779,11 @@
      <label>About</label><br>
   <textarea row="5" col="20" id="des" name="About" placeholder="write a few lines that best describe you">
 
-  </textarea>  -->
+  </textarea> 
 
      <div>
-        <input type="submit" value="UPDATE">
-         <a href="/profile/student">Cancel</a>
+         <button type="submit">UPDATE</button>
+         <a href="">Cancel</a>
      </div>
     
   </form>
@@ -800,457 +798,171 @@
 
 
 
-     <div id="update_address" >
-   <h1>Address </h1>
-             <input type="text" placeholder="Address*" id="address"><br>
-                <select id="state" placeholder="State">
-                    <option>select state</option>
- <option value="Bihar">Bihar</option>
- <option value="Rajashthan">Rajashthan</option>
- <option value="Punjab">Punjab</option>
- <option value="haryana">haryana</option>
- <option value="Delhi">Delhi</option>
- <option value="Maharashtra">Maharashtra</option>
- <option value="Gujrat">Gujrat</option>
- <option value="Tamilnadu">Tamilnadu</option>
- <option value="Goa">Goa</option>
- <option value="karnataka">karnataka</option>
-                </select><br>
-  <input type="text" placeholder="Enter your city" id="city"><br>
-  <input type="number" placeholder="Pincode*" id="pincode"><br>
+  <div id="update_address" >
+    <h1>Address </h1>
+     <form action="" onsubmit="updateStudentAddress(event,`<%=user._id %>`)">
+        <input type="text" placeholder="Address*" id="address"><br>
+        <select id="state" placeholder="State">
+            <option>select state</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Rajashthan">Rajashthan</option>
+            <option value="Punjab">Punjab</option>
+            <option value="haryana">haryana</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Gujrat">Gujrat</option>
+            <option value="Tamilnadu">Tamilnadu</option>
+            <option value="Goa">Goa</option>
+            <option value="karnataka">karnataka</option>
+       </select><br>
+    <input type="text" placeholder="Enter your city" id="city"><br>
+    <input type="number" placeholder="Pincode*" id="pincode"><br>
 
-    <div>
-        <button onclick="Addaddress()" >Add</button>
-        <a href="/profile/student">Cancel</a>
-    </div>
-    </div> 
+<div>
+<button onclick="Addaddress()" >Add</button>
+<a href="profile.html">Cancel</a>
+</div>
+     </form>
 
+</div> 
 
 
         <div id="add_Education"> 
           
           <h1>Add Education</h1>
-          <label>level of Education*</label><br>
-      <select id="edu">
-          <option>Select level of Education*</option>
-       <option value="Graduation">Graduation</option>
-       <option value="diploma">Diploma</option>
-       <option value="X|| Equivalent">X||</option>
-       <option value="X Equivalent">X</option>
-       <option value="Certificate Course">Certificate Course</option>
-      </select><br>
-      
-     <label>Institution Name*</label><br>
-      <input type="text" name="Enter Your Institution Name" id="insname"><br>
-  <label>Degree*</label><br>
-  <input type="text" name="Enter Your Degree" id="degree"><br>
-  <label>Select Year*</label><br>
-  <select id="year">
-    <option >Select College Year</option>
-    <option value="First Year">First Year</option>
-    <option value="Second Year">Second Year</option>
-    <option value="Third Year">Third Year</option>
-    <option value="Forth Year">Forth Year</option>
-    <option value="Fifth Year">Fifth Year</option>
-  </select><br>
-     
-    <div>
-        <button onclick="addEducation()">UPDATE</button>
-        <a href="profile.html">Cancel</a>
-    </div>
-</div> 
-<div id="footer">
-    <%- include('../partials/footer') %>
-</div>
-
-
-    <script>
-//         var student_detail=JSON.parse(localStorage.getItem("studentDetail"));
-  
-//         function updateprofile(){
+          <form action="" onsubmit="updateEducation(event,`<%=user._id %>`)">
+            <label>level of Education*</label><br>
+            <select id="edu">
+                <option>Select level of Education*</option>
+             <option value="Graduation">Graduation</option>
+             <option value="diploma">Diploma</option>
+             <option value="X|| Equivalent">X||</option>
+             <option value="X Equivalent">X</option>
+             <option value="Certificate Course">Certificate Course</option>
+            </select><br>
+            
+           <label>Institution Name*</label><br>
+            <input type="text" name="Enter Your Institution Name" id="insname"><br>
+        <label>Degree*</label><br>
+        <input type="text" name="Enter Your Degree" id="degree"><br>
+        <label>Select Year*</label><br>
+        <select id="year">
+          <option >Select College Year</option>
+          <option value="First Year">First Year</option>
+          <option value="Second Year">Second Year</option>
+          <option value="Third Year">Third Year</option>
+          <option value="Forth Year">Forth Year</option>
+          <option value="Fifth Year">Fifth Year</option>
+        </select><br>
            
-//            // var student_detail=JSON.parse(localStorage.getItem("studentDetail"));
-//            // console.log(student_detail)
-
-//             var fname=document.getElementById("fname").value;
-//             var lname=document.getElementById("lname").value;
-//              var gender=document.getElementById("gender").value;
-//              var dob=document.getElementById("date").value;
-//              var lang=document.getElementById("lang").value;
-//              var hobby=document.getElementById("hobby").value;
-//              var achvmnt=document.getElementById("achiev").value;
-//              var skill=document.getElementById("skill").value;
-//              var pref=document.getElementById("pref").value;
-//            var about=document.getElementById("des").value;
-
-//           var name= fname +" "+ lname;
-         
-//         //   console.log(name)
-//         //   let user_info={}
-//         //      user_info. Name= name,
-//         //     user_info.Gender=gender,
-//         //     user_info. DOB=dob,
-//         // user_info.Language=lang,
-//         //     user_info.Hobbies=hobby,
-//         //     user_info.Achievements=achvmnt,
-//         //     user_info.  Skills=skill,
-//         //     user_info.Preference=pref,
-//         //     user_info.About=about,
-   
-          
-
-//          // localStorage.setItem("user_profile",JSON.stringify(user_info));
-          
-//         // var student_detail=JSON.parse(localStorage.getItem("studentDetail"))
-       
-//          student_detail.first=fname;
-//          student_detail.last=lname;
-//         // student_detail.Name=`${student_detail.first}`+" "+ `${student_detail.last}`;
-//         // if(student_detail.Name==undefined){
-//         //     student_detail.Name=name;
-//         // }
-//          student_detail.Name=name;
-//     //    console.log(student_detail)
-//          student_detail.Gender=gender;
-//          student_detail.Dob=dob;
-//          student_detail.Language=lang;
-//          student_detail.Hobbies=hobby;
-//          student_detail.Achievements=achvmnt;
-//          student_detail.Skills=skill;
-//          student_detail.Preference=pref;
-//          student_detail.About=about;
-
-
-//          localStorage.setItem("studentDetail",JSON.stringify(student_detail));
-          
-//       setTimeout(()=>{
-//          alert("Your profile is updated")
-//           window.location.href="profile.html";
-//       },1000)
-            
-        
-
-//         }
-
-       
-
-//         function Addaddress(){
-//             let user_info= JSON.parse(localStorage.getItem("studentDetail")) ;
-//           //  console.log(user_info) ;
-//             var adrs=document.getElementById("address").value ;
-//             var state=document.getElementById("state").value ;
-//             var city= document.getElementById("city").value ;
-//             var pincode=document.getElementById("pincode").value ;
-
-//              user_info.Address=adrs,
-//              user_info.city=city,
-//              user_info.Pincode=pincode,
-//              user_info.State=state
-
-             
-//      setTimeout(()=>{
-//         alert("Your Address is updated")
-//          window.location.href="profile.html";
-//      },1000)
-            
-//              localStorage.setItem("studentDetail",JSON.stringify(user_info));
-//         }
-
-
-     
-//      function addEducation(){
-//         let user_info= JSON.parse(localStorage.getItem("studentDetail")) ;
-         
-//         var edu=document.getElementById("edu").value ;
-//         var insname=document.getElementById("insname").value ;
-//         var degree=document.getElementById("degree").value ;
-//         var year=document.getElementById("year").value ;
-
-//         user_info.Education=edu,
-//         user_info.institute=insname,
-//         user_info.Degree=degree,
-//         user_info.Year=year
-
-//         alert("Your Educational details are updated")
-//      setTimeout(()=>{
-//          window.location.href="profile.html";
-//      },2000)
-//         localStorage.setItem("studentDetail",JSON.stringify(user_info));
-//      }
-   
-
-//       var user_info1= JSON.parse(localStorage.getItem("studentDetail")) ;
-
- 
-
-
-//         //  console.log( "final data from lclstrg,",user_info1)
-   
-   
-
-//      function appenditeminleftdiv(){
-//      let updiv = document.createElement("div");
-//        updiv.setAttribute("id","updiv")
-//      let image= document.createElement("img");
-//          if(user_info1.Gender=="Male"){
-//              image.src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg"
-//          }
-//         else{
-//      image.src="https://assets.interntheory.com/creative/default-images/girlProfile.jpg"
-//         }
-
-//        let btn = document.createElement("button");
-//        btn.textContent ="GO TO DASHBOARD"
-//         btn.onclick =gotodashboard;
-//        let p1=document.createElement("p");
-//        p1.textContent =user_info1.first+ " "+user_info1.last;
-//        let dndiv=document.createElement("div");
-//        dndiv.setAttribute("id","dndiv")
-//       let p2=document.createElement("p");
-//        p2.textContent ="Email:"+" "+user_info1.email;
-
-//        let p3=document.createElement("p");
-//        p3.textContent ="Mobile:"+" "+user_info1.mobile;
-
-//        dndiv.append(p2,p3)
-//   updiv.append(image,btn,p1)
-//    document.getElementById("leftpicbox").append(updiv,dndiv)
-
-
-
-
-//     }
-
-//    appenditeminleftdiv();
-
-
-
-//     function gotodashboard(){
-//         window.location.href="courses.html";
-//     }
-
-
-
-
-
-
-//      function appenddiv1(){
-
-//         let imdv=document.createElement("div");
-//   imdv.setAttribute("id","imdv")
-//         let image= document.createElement("img");
-//          if(user_info1.Gender=="Male"){
-//              image.src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg"
-//          }
-//        else{
-//         image.src="https://assets.interntheory.com/creative/default-images/girlProfile.jpg"
-//        }
-
-//  imdv.append(image)
-//     document.getElementById("d1").append(imdv);
-     
-//     let txdv=document.createElement("div");
-//     txdv.setAttribute("id", "txdv");
-//     let p1=document.createElement("p");
-//     p1.textContent =user_info1.first+" "+user_info1.last;
-     
-//       let btndv=document.createElement("div");
-//         btndv.setAttribute("id","btndv")
-//       let btndv1=document.createElement("div");
-//          btndv1.setAttribute("id","btndv1")
-//         let span1=document.createElement("span");
-//          span1.textContent="VIEW RESUME";
-//          let span2=document.createElement("span");
-//          span2.textContent="DOWNLOAD RESUME";
-
-//          let btndv2=document.createElement("div");
-//          btndv2.setAttribute("id","btndv2")
-//          let span3=document.createElement("span");
-//          span3.textContent="CHANGE PASSWORD";
-//    btndv1.append(span1,span2);
-
-//    btndv2.append(span3)
-//       btndv.append(btndv1,btndv2)
-
-//      txdv.append(p1,btndv);
-//      document.getElementById("d1").append(txdv);
-
-//      }
-   
-//     appenddiv1();
-
-
-//        function appenddiv2(){
-        
+          <div>
+              <button onclick="addEducation()">UPDATE</button>
+              <a href="profile.html">Cancel</a>
+          </div>
+          </form>
 
         
-//         if(user_info1.Name==""){
-//             document.getElementById("n").innerHTML="N/A";
-//         }
-//        else{
-//         document.getElementById("n").innerHTML=user_info1.first+" "+user_info1.last;
-//        }
+</div> 
+      <div id="footer"></div> 
 
+</body>
+</html>
 
-
-//         if(user_info1.Gender==""){
-//             document.getElementById("g").innerHTML="N/A";
-//         }
-//           else{
-//             document.getElementById("g").innerHTML=user_info1.Gender;
-//           }
-
-
-
-//         if(user_info1.Dob==""){
-//             document.getElementById("d").innerHTML="N/A";
-//         }
-//         else{
-//             document.getElementById("d").innerHTML=user_info1.Dob;
-//         }
-
-
-//         if(user_info1.Language==""){
-//             document.getElementById("l").innerHTML="N/A";
-//         }
-//         else{
-//             document.getElementById("l").innerHTML=user_info1.Language;
-//         }
-
-
-//         if(user_info1.Hobbies==""){
-//             document.getElementById("h").innerHTML="N/A";
-            
-//         }
-//  else{
-
-//     document.getElementById("h").innerHTML=user_info1.Hobbies;
-//    }
-
-     
-//        if(user_info1.Achievements==""){
-//             document.getElementById("a").innerHTML="N/A";
-//         }
-//          else{
-//             document.getElementById("a").innerHTML=user_info1.Achievements;
-//          }
-
-      
-//        if(user_info1.Skills==""){
-//             document.getElementById("s").innerHTML="N/A";
-//         }
-//         else{
-//             document.getElementById("s").innerHTML=user_info1.Skills;
-//         }
-     
-//        if(user_info1.Preference==""){
-//             document.getElementById("p").innerHTML="N/A";
-//         }
-//         else{
-//             document.getElementById("p").innerHTML=user_info1.Preference;
-//         }
-     
-//      if(user_info1.About==""){
-//             document.getElementById("ab").innerHTML="N/A";
-//         }
-//         else{
-//             document.getElementById("ab").innerHTML=user_info1.About;
-//        }
-      
-//        }
-
-
-//        appenddiv2();
-
-//        function appenddiv3(){
-
-     
-
-//         document.getElementById("mail").innerHTML=user_info1.email;
-//         document.getElementById("no").innerHTML=user_info1.mobile;
-      
-//         let gdiv= document.createElement("div");
-
-//   let gim =document.createElement("img");
-//   gim.src="data:image/png;base64,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"
-//   let gp=document.createElement("p");
-//   gp.textContent=`${user_info1.email}`;
-//    gdiv.append(gim,gp)
-//    document.getElementById("gac").append(gdiv)
+<script>
   
-//      let fdiv = document.createElement("div");
-//      let fim = document.createElement("img");
-//         fim.src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-//   let fp=document.createElement("p");
-//   fp.textContent="Link Your Facebook Account";
-//      fdiv.append(fim,fp);
-//       document.getElementById("fbac").append(fdiv)
-
-//        }
-
-//     appenddiv3();
-
-//   function appenddiv4(){
-
-//     if(user_info1.Address==""){
-//             document.getElementById("ad").innerHTML="N/A";
-//         }
-//         else{
-//             document.getElementById("ad").innerHTML=user_info1.Address;
-//         }
 
 
-//         if(user_info1.city==""){
-//             document.getElementById("ct").innerHTML="N/A";
-//         }
-//         else{
-            
-//         document.getElementById("ct").innerHTML=user_info1.city;
-//         }
+let user_info1={
+    Gender:"Male",
+    first:"deepak",
+    last:"saini",
+    email:"12sdkjfk",
+    mobile:"kdsjfkja"
+}
 
-//         if(user_info1.State==null){
-//             document.getElementById("st").innerHTML="N/A";
-//         }
-//         else{
-//             document.getElementById("st").innerHTML=user_info1.State;
-//         }
+function appenditeminleftdiv(){
+     let updiv = document.createElement("div");
+       updiv.setAttribute("id","updiv")
+     let image= document.createElement("img");
+         if(user_info1.Gender=="Male"){
+             image.src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg"
+         }
+        else{
+     image.src="https://assets.interntheory.com/creative/default-images/girlProfile.jpg"
+        }
 
-//         if(user_info1.Pincode==null){
-//             document.getElementById("pn").innerHTML="N/A";
-//         }
-//         else{
-//             document.getElementById("pn").innerHTML=user_info1.Pincode;
-//         }
-       
+       let btn = document.createElement("button");
+       btn.textContent ="GO TO DASHBOARD"
+        // btn.onclick =gotodashboard;
+       let p1=document.createElement("p");
+       p1.textContent =user_info1.first+ " "+user_info1.last;
+       let dndiv=document.createElement("div");
+       dndiv.setAttribute("id","dndiv")
+      let p2=document.createElement("p");
+       p2.textContent ="Email:"+" "+user_info1.email;
 
-//   }
+       let p3=document.createElement("p");
+       p3.textContent ="Mobile:"+" "+user_info1.mobile;
+
+       dndiv.append(p2,p3)
+  updiv.append(image,btn,p1)
+   document.getElementById("leftpicbox").append(updiv,dndiv)
 
 
 
-//    appenddiv4();
-//    function appenddiv5(){
 
-//     let p1=document.createElement("p");
-//     p1.textContent=user_info1.Degree;
-//     let p3=document.createElement("p");
-//     p3.textContent=user_info1.Education;
-//     let p4=document.createElement("p");
-//     p4.textContent=user_info1.Year;
-//     let p2=document.createElement("p");
-//     p2.textContent=user_info1.institute;
+    }
 
-//   document.getElementById("d5").append(p1,p2,p3,p4)
+   appenditeminleftdiv();
+
+   function appenddiv1(){
+
+let imdv=document.createElement("div");
+imdv.setAttribute("id","imdv")
+let image= document.createElement("img");
+ if(user_info1.Gender=="Male"){
+     image.src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg"
+ }
+else{
+image.src="https://assets.interntheory.com/creative/default-images/girlProfile.jpg"
+}
+
+imdv.append(image)
+document.getElementById("d1").append(imdv);
+
+let txdv=document.createElement("div");
+txdv.setAttribute("id", "txdv");
+let p1=document.createElement("p");
+p1.textContent =user_info1.first+" "+user_info1.last;
+
+let btndv=document.createElement("div");
+btndv.setAttribute("id","btndv")
+let btndv1=document.createElement("div");
+ btndv1.setAttribute("id","btndv1")
+let span1=document.createElement("span");
+ span1.textContent="VIEW RESUME";
+ let span2=document.createElement("span");
+ span2.textContent="DOWNLOAD RESUME";
+
+ let btndv2=document.createElement("div");
+ btndv2.setAttribute("id","btndv2")
+ let span3=document.createElement("span");
+ span3.textContent="CHANGE PASSWORD";
+btndv1.append(span1,span2);
+
+btndv2.append(span3)
+btndv.append(btndv1,btndv2)
+
+txdv.append(p1,btndv);
+document.getElementById("d1").append(txdv);
+
+}
+
+appenddiv1();
 
 
-//    }
 
-
-
-//  appenddiv5()
-
-
-
-       document.getElementById("upprsn").addEventListener("click",()=>{
+document.getElementById("upprsn").addEventListener("click",()=>{
          document.getElementById("update_personal_details").style.visibility="visible";
        });
 
@@ -1262,85 +974,88 @@
          document.getElementById("add_Education").style.visibility="visible";
        })
 
-
-
-
-//     </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
-
-<script type='module'>
-      import { product, showData, hello, afterLogout } from './script/showData.js'
-    let localStorageData = JSON.parse(localStorage.getItem('studentDetail'))
-
-import { n12345, footer1235 } from './component/after_nav.js'
-import { n1234, footer123 } from './component/n123.js'
-
-
-if (localStorageData == null) {
-    document.getElementById('nn123').innerHTML = n1234();
-    document.getElementById('footer').innerHTML = footer123();
-}
-
-else {
-
-   
-        document.getElementById('nn123').innerHTML = n12345();
-        document.getElementById('footer').innerHTML = footer1235();
-
-        let name = document.getElementById('name');
-        name.innerText = localStorageData.first + " " +localStorageData.last;
-
-        let mail = document.getElementById('mail');
-        mail.innerText = localStorageData.email;
-
-        let phno = document.getElementById('phno');
-        phno.innerText = localStorageData.mobile;
-
-        let profile_img1 = document.getElementById('profile_img1');
-        let profile_img2 = document.getElementById('profile_img2');
-        afterLogout();
-        if(localStorageData.Gender === "Male"){
-            profile_img1.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
-            profile_img2.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
-         }
-        else{
-            profile_img1.src ="https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
-            profile_img2.src = "https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+function studentUpdate(e,id){
+    e.preventDefault()
+    console.log(id)
+    async function updateProduct() {
+        console.log("call or not")
+        let data = {
+          
+            first_Name:document.getElementById("fname").value,
+            last_name:document.getElementById("lname").value,
+            gender:document.getElementById("gender").value,
+            dob:document.getElementById("date").value,
+            language:document.getElementById("lang").value,
+            hobby:document.getElementById("hobby").value,
+            achivement:document.getElementById("achiev").value,
+            skill:document.getElementById("skill").value,
+            preference:document.getElementById("pref").value,
+            about:document.getElementById("des").value,
+            
         }
+        let res = await fetch(`http://localhost:2345/login/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+    }
+    updateProduct()
+    location.href=`/login/profile/${id}`
+
+    
 }
 
-    let InternshipBtn = document.getElementById('InternshipBtn')
-    let jobsBtn = document.getElementById('jobsBtn')
-    InternshipBtn.addEventListener('click', () => { hello('Internship', 'All Internships') })
-    jobsBtn.addEventListener('click', () => { hello('Job', 'Fresher Jobs') })
+function updateStudentAddress(e,id){
+    e.preventDefault()
+    console.log(id)
+    async function updateProduct() {
+        console.log("call or not")
+        let data = {
+             address:document.getElementById("address").value,
+             state:document.getElementById("state").value,
+             city: document.getElementById("city").value,
+             pin:document.getElementById("pincode").value,
+        }
+        let res = await fetch(`http://localhost:2345/login/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+    }
+    updateProduct()
+    location.href=`/login/profile/${id}`
 
+    
+}
 
-    $('.btn').click(function () {
-        $(this).toggleClass("click");
-        $('.sidebar').toggleClass("show");
-    });
+function updateEducation(e,id){
+    e.preventDefault()
+    console.log(id)
 
-    $('.feat-btn').click(function () {
-        $('nav ul .feat-show').toggleClass("show");
-    });
-    $('.feat1-btn').click(function () {
-        $('nav ul .feat1-show').toggleClass("show1");
-    });
-    $('.feat2-btn').click(function () {
-        $('nav ul .feat2-show').toggleClass("show2");
-    });
+    async function updateProduct() {
+        console.log("call or not")
+        let data = {
+            leveledu:document.getElementById("edu").value,
+            institute:document.getElementById("insname").value,
+            degree:document.getElementById("degree").value,
+            selyear:document.getElementById("year").value,
+        }
+        let res = await fetch(`http://localhost:2345/login/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+    }
+    updateProduct()
+    window.location.reload();
+    location.href=`/login/profile/${id}`
+    
+}
+
 </script>
