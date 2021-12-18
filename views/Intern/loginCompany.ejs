@@ -10,14 +10,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Intern Theory</title>
-    <link rel="stylesheet" href="/css/loginform.css">
+    <link rel="stylesheet" href="/css/loginform.css" />
+    <link rel="stylesheet" href="/css/temp.css">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="/css/temp.css">
+    
     
     <style>
     
-        #studentbutton {
+    #companybutton{
             border-bottom: 2px solid rgb(9, 124, 226);
         }
 
@@ -26,7 +27,7 @@
 </head>
 
 <body>
-    <div id="nn123"></div>
+    
     <form action="/login" method="post" enctype="multipart/form-data" onsubmit=""> 
         <div class="login">
             <div class="inner-box">
@@ -43,33 +44,25 @@
         
                 </div>
                 <div class='loginpara'>
-                    <p>If you are a company looking to hire interns, please login as a company by clicking <a
-                            href="/login/company/new">here</a>
+                    <p>If you are a student looking for internships, please login as a student by clicking <a
+                            href="/login/new">here</a>
                     </p>
                 </div>
                 <div class="fbGoogle bg-icon-color1">
                     <a href="">
                         <span>
                             <img id='iconImg' class="iconImg"
-                                src="https://www.interntheory.com/assets/iconsLogos/facebook-circular-logo.svg" height="25">
-                            <span id='span' style="margin-left: 20%;">SIGNIN WITH FACEBOOK</span>
+                                src="https://www.interntheory.com/assets/iconsLogos/linkedin.svg" height="25">
+                            <span id='span' style="margin-left: 20%;">SIGNIN WITH LINKDIN</span>
                         </span>
                     </a>
                 </div>
-                <div id='gooleicon' class="fbGoogle bg-icon-color2">
-                    <a href="">
-                        <span>
-                            <img class="iconImg" src="https://www.interntheory.com/assets/iconsLogos/googlelogo.svg"
-                                height="25">
-                            <span style="margin-left: 20%;">SIGNIN WITH GOOGLE</span>
-                        </span>
-                    </a>
-                </div>
+               
                 <div class="or">
                     <h5>OR</h5>
                 </div>
                 <div>
-                    <form class="form"action="/login" method="post" enctype="multipart/form-data">
+                    <form  class="form"action="/login" method="post" enctype="multipart/form-data">
                         <!-- <label for="email">Email/Number</label> -->
                         <input class="loginInputs" aria-invalid="false" type="text"  name="email" placeholder="Email/Number*" id="email" required />
                         <!-- <label for="password">Password</label> -->
@@ -77,7 +70,7 @@
                         <div class="not_account">
                         <p>
                             Don't have an account?
-                            <span><a href="/register/new">Create your account</a></span>
+                            <span><a href="/register/company/new">Create your account</a></span>
                             <!-- <span class="color_blue" onclick="create_account()">Create your account</span> -->
                         </p>
                     </div>
