@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
-    // const user = req.user;
+    // const user = req.query.user;
 
     // console.log(req.body)
 
@@ -19,6 +19,7 @@ router.post("/", async (req, res) => {
       req.body
 
     );
+    console.log(post)
 
     return res.status(201).json({ post });
   } catch (e) {
@@ -27,34 +28,38 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-  // try {
+  try {
 
-  //   let carts;
-  //   const user_id = req.query.user;
-
-  //   if (user_id) {
-  //     carts = await Post.find({ 'user': user_id }).populate("course");
-  //   } else {
-  //     carts = await Post.find();
-
-  //   }
-
-  //   // .populate("movie_id").lean().exec()
-
-  //   res.send({ carts })
-
-  // }
-  // catch (e) {
-  //   return res.status(500).json({ status: "failed", message: e.message });
-  // }
+    let posts;
+    const user_id = req.query.user;
+    // console.log(user_id);
+    if (user_id) {
+      posts = await Post.find({ 'user': user_id }).populate("course");
+    }
 
 
 
+    // .populate("movie_id").lean().exec()
 
-  const posts = await Post.find().populate("course").lean().exec();
+    // res.send({ carts })
+    // console.log(posts);
+    return res.render("courses/cart", { posts })
+    // return res.send(posts)
+
+  }
+  catch (e) {
+    return res.status(500).json({ status: "failed", message: e.message });
+  }
+
+
+
+
+  // const posts = await Post.find().populate("course").lean().exec();
 
   // return res.send({ posts });
-  return res.render("courses/cart", { posts });
+  // return res.render("courses/cart", { posts })
+
+
 });
 
 

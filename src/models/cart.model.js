@@ -3,6 +3,11 @@ const { Schema, model } = require("mongoose");
 const productSchema = new Schema(
   {
 
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "user",
+      required: true,
+    },
 
     course: {
       type: Schema.Types.ObjectId,
@@ -19,8 +24,3 @@ const productSchema = new Schema(
 
 module.exports = model("product", productSchema);
 
- // user: {
-    //   type: Schema.Types.ObjectId,
-    //   ref: "user",
-    //   required: true,
-    // },
