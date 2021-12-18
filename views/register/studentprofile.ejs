@@ -590,7 +590,7 @@
 <body>
     <p id="localStor"><%= user._id %></p>
     <div id="nn123">
-        <%- include('../partials/navbar') %>
+        <%- include('../partials/afterLoginNavbar') %>
     </div>
       <div id="box">
         <div id="leftpicbox">
@@ -867,16 +867,39 @@
 
         
 </div> 
-      <div id="footer"></div> 
+<div id="footer">
+    <%- include('../partials/footer') %>
+</div>
 
 </body>
 </html>
 
 <script>
+
+
+  
+$('.btn').click(function () {
+        $(this).toggleClass("click");
+        $('.sidebar').toggleClass("show");
+    });
+
+    $('.feat-btn').click(function () {
+        $('nav ul .feat-show').toggleClass("show");
+    });
+    $('.feat1-btn').click(function () {
+        $('nav ul .feat1-show').toggleClass("show1");
+    });
+    $('.feat2-btn').click(function () {
+        $('nav ul .feat2-show').toggleClass("show2");
+    });
+
+  
+
   
 let localStor=document.getElementById("localStor").textContent
 localStorage.setItem("userid",JSON.stringify(localStor))
 console.log(localStor)
+
 
 let user_info1={
     Gender:"Male",
