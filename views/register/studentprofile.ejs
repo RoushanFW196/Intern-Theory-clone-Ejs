@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="/css/temp.css">
        <style>
+  #localStor{
+       display: none;
+           }
   #box{
       width:90%;
       height: 1500px;
@@ -585,6 +588,7 @@
 
 </head>
 <body>
+    <p id="localStor"><%= user._id %></p>
     <div id="nn123">
         <%- include('../partials/navbar') %>
     </div>
@@ -870,7 +874,9 @@
 
 <script>
   
-
+let localStor=document.getElementById("localStor").textContent
+localStorage.setItem("userid",JSON.stringify(localStor))
+console.log(localStor)
 
 let user_info1={
     Gender:"Male",
