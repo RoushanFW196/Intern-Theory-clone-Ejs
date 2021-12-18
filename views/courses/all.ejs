@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All courses</title>
+    <link rel="stylesheet" href="../css/courses.css">
+</head>
+
+<body>
+    <div>
+        <div id="heading">
+            <img src="https://assets.interntheory.com/creative/courses/listpage/Course-banner1.png">
+        </div>
+        <div class="intro">
+            <h4>Certified Online Courses</h4>
+            <p>Upgrade your skills with Intern Theory's online learning platform. Enrol for any certified online
+                courses and get a step ahead of competition. Select from a range of skill based online courses and
+                kickstart your career.
+            </p>
+        </div>
+    </div>
+
+    <div id="details">
+        <div id="online_course">
+            <% course.forEach(courses=> { %>
+
+                <div>
+                    <img src="<%= courses.image%>" alt="nothing">
+                    <p class="p_name">
+                        <%= courses.name %>
+                    </p>
+                    <p class="p_des">
+                        <%= courses.Des %>
+                    </p>
+                    <hr style="border-top:1px dashed gray">
+
+                    <p class="p_price">
+                        <span style="display: inline; text-decoration: line-through; font-size:10px; color:gray;">₹<%=
+                                courses.price1 %></span>&nbsp;<span>₹&nbsp;<%= courses.price %></span>
+                    </p>
+                    <p class="p_emi">
+                        <%= courses.EMI %>
+                    </p>
+
+                    <button onclick="addToCart(`<%= courses._id %>`)" class="button">ADD TO CART</button>
+
+
+                    <a href="http://localhost:7570/courses/<%= courses._id %>" class="button1">KNOW MORE</a>
+                </div>
+                <% }) %>
+
+
+        </div>
+    </div>
+
+    <a href="http://localhost:7570/cart">CART</a>
+
+    <script>
+
+
+
+
+        function addToCart(coursess) {
+            // console.log(typeof coursess)
+            fetch('http://localhost:7570/cart', {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ "course": coursess })
+            }).then(res => res.json())
+                .then(res => console.log(res));
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

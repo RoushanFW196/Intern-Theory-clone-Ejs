@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="../css/cart.css" />
+</head>
+
+<body>
+    <div class="cont">
+        <div class="cart">
+            <div class="cart_left">
+                <h6 class="jss225">Cart</h6>
+                <div id="showitems">
+                    <!-- code excuted by javascript -->
+
+                    <% let totalPrize=0 %>
+                        <% posts.forEach(item=> { %>
+
+                            <div>
+                                <button onclick="deleteItem(`<%=item._id%>`)" id="cutitem">
+                                    X
+                                </button>
+                                <img src="<%= item.course.image%>" alt="nothing" />
+                                <h4>
+                                    <%= item.course.name %>
+                                </h4>
+                                <p>
+                                    <%= item.course.price1 %>
+                                </p>
+                                <p>
+                                    <%= item.course.price %>
+                                </p>
+                                <hr class="H" />
+                            </div>
+
+                            <% totalPrize+=Number(item.course.price)%>
+                                <% }) %>
+
+
+                </div>
+            </div>
+            <div class="vl"></div>
+            <div class="cart_right">
+                <p>
+                    Amount<span id="totalamount"></span><span>₹<%= totalPrize %></span>
+                </p>
+                <hr style="margin-top: -12px" />
+
+                <%let cgst=Math.round(totalPrize * 9 / 100)%>
+                    <p>CGST 9% <span id="cgst"></span><span>₹<%=cgst%></span></p>
+                    <hr style="margin-top: -12px" />
+                    <%let sgst=Math.round(totalPrize * 9 / 100)%>
+                        <p>SGST 9%<span id="sgst"></span><span>₹<%=sgst%></span></p>
+                        <hr style="margin-top: -12px" />
+
+                        <% let final=totalPrize+cgst+sgst%>
+                            <h3 class="total">
+                                Total: <span id="total">
+                                    <%=final%>
+                                </span>
+                            </h3>
+
+                            <input type="text" placeholder="coupon" id="text" /><button id="promo">
+                                Go
+                            </button>
+                            <br />
+
+                            <button id="myBtn" class="checkout">CHECKOUT</button>
+                            <!-- <button id="myBtn">Open Modal</button> -->
+
+                            <!-- The Modal -->
+                            <div id="myModal" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <!-- <p>Some text in the Modal..</p> -->
+                                    <!-- start modal features -->
+                                    <div id="main">
+                                        <div class="content">
+                                            <div id="head">
+                                                <div id="logo">
+                                                    <img
+                                                        src="https://cdn.razorpay.com/logos/8BOCiNqJJB6Zfs_medium.jpg" />
+                                                </div>
+                                                <div id="heading">
+                                                    <!-- <button onclick="location.href='cart.html'" id="cancel">X</button> -->
+                                                    <h2>Intern Theory</h2>
+                                                    <p>Purchase Description</p>
+
+                                                    <div id="money">₹<%=final%>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="language">
+                                                <h4>English</h4>
+                                            </div>
+                                            <div id="card_option">
+                                                <h5>Card Detail</h5>
+                                            </div>
+                                            <div id="new_card_box">
+                                                <div id="new_card_heading">
+                                                    <h5>Add New Card</h5>
+                                                </div>
+                                                <div id="card_data">
+                                                    <input type="number" id="cardNumber" placeholder="Card Number" />
+                                                    <input type="text" id="exp" placeholder="MM/YY" />
+                                                    <input type="text" id="cardName" placeholder="Card Holder's name" />
+                                                    <input type="password" maxlength="3" id="cvv" placeholder="CVV" />
+                                                </div>
+                                            </div>
+                                            <div id="remember">
+                                                <input type="checkbox" />
+                                                <label>Remember Card</label>
+                                            </div>
+                                            <div id="pay_part">
+                                                <p id="payment" onclick="valie()">PAY</p>
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <P class="note">EMI Starting at ₹686/month</P>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // var add = 0
+    // function sum(n) {
+
+    //     add = add + n
+    // }
+    // console.log(add)
+
+
+    function deleteItem(id) {
+        console.log("yes")
+        function deleteProduct() {
+            let res = fetch(`http://localhost:7570/cart/delete/${id}`,
+                { method: 'DELETE', headers: { 'Content-type': 'application/json' } })
+        }
+        deleteProduct()
+        window.location.reload()
+    }
+
+
+
+    // start card details modal js
+
+    var modal = document.getElementById("myModal");
+
+
+    var btn = document.getElementById("myBtn");
+
+
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+
+    function validate() {
+
+        // modal js
+
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    }
+
+
+
+    function valie() {
+
+        console.log("yes");
+
+        var cardnumber = document.getElementById("cardNumber").value;
+        var expiry = document.getElementById("exp").value;
+        var cardname = document.getElementById("cardName").value;
+        var Cvv = document.getElementById("cvv").value;
+
+
+        // console.log(cardnumber, expiry, cardname, Cvv);
+
+        // console.log(cardnumber, expiry, cardname, Cvv);
+
+
+        if (cardnumber.length == 16 && expiry.length == 4 && cardname != "" && Cvv.length == 3) {
+            alert("payment Successful");
+
+            setTimeout(function () {
+                window.location.href = "index.html";
+
+            }, 2000);
+            // window.localStorage.clear();
+            localStorage.removeItem('totalp')
+        } else {
+            alert("your card is details wrong")
+        }
+
+
+    }
+
+
+    // end card details modal js
+
+
+    var btn_promo = document.getElementById("promo");
+    btn_promo.addEventListener("click", applycode);
+
+    function applycode() {
+        btn_promo.disabled = true;
+        // console.log("yes")
+        var res = document.getElementById("total").textContent
+        // console.log(res, "asd")
+        // var total_amount = Number(res);
+
+        var afterpromo = Math.floor(res - (res * 30) / 100);
+
+        let promoInput = document.getElementById("text").value;
+
+        checker(res, afterpromo, promoInput)
+
+        function checker(res, afterpromo, promoInput) {
+            if (promoInput === "masai30") {
+                var totalpay = document.getElementById("total")
+                totalpay.textContent = "Rs." + afterpromo;
+                localStorage.setItem("totalp", JSON.stringify(afterpromo));
+            } else {
+                var totalpay = document.getElementById("total")
+                totalpay.textContent = "Rs" + res;
+                localStorage.setItem("totalp", JSON.stringify(afterpromo));
+
+            }
+        }
+
+
+        var payable_money = document.getElementById("money");
+
+        payable_money.innerHTML = "₹" + JSON.parse(localStorage.getItem("totalp"));
+    }
+
+</script>
+
+</html>
