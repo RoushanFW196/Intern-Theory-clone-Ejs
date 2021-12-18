@@ -734,16 +734,16 @@
   <div id="update_personal_details">
       <form href="" onsubmit="studentUpdate(event,`<%=user._id %>`)" >
     <h1>Update Personal Details</h1>
-    <input type="text" placeholder=" Enter Your First Name*" id="fname"><br>
-    <input type="text" placeholder=" Enter Your Last Name*" id="lname"><br>
-        <select id="gender" placeholder="Gender*">
+    <input type="text" placeholder=" Enter Your First Name*" id="fname" name="first_name"><br>
+    <input type="text" placeholder=" Enter Your Last Name*" id="lname" name="last_name"><br>
+        <select id="gender" placeholder="Gender*" name="Gender">
            <option value="Male">Male</option>
            <option value="Female">Female</option>
            <option value="Others">Others</option>
        </select><br>
        <label>Date of Birth*</label><br>
-      <input type="date" placeholder="Date of Birth*"id="date"><br>
-      <select id="lang"><br>
+      <input type="date" placeholder="Date of Birth*"id="date" name="DOB"><br>
+      <select id="lang" name="Languages"><br>
         
           <option value="Hindi">Hindi</option>
           <option value="English">English</option>
@@ -754,10 +754,10 @@
           <option value="Chinese">Chinese</option>
          
       </select><br>
-  <input type="text" placeholder="hobbies" id="hobby"><br>
-     <input type="text" placeholder="Achievements" id="achiev"><br>
+  <input type="text" placeholder="hobbies" id="hobby" name="Hobbies"><br>
+     <input type="text" placeholder="Achievements" id="achiev" name="Achievements"><br>
 
-       <select id="skill" placeholder="Skills*">
+       <select id="skill" placeholder="Skills*" name="Skills" >
           
            <option value="Digital Marketing">Digital Marketing</option>
            <option value="consulting">Consulting</option>
@@ -766,7 +766,7 @@
            <option value="Finance">Finance</option>
        </select><br>
 
-  <select id="pref">
+  <select id="pref" name="Preferences">
      
       <option value="Animation">Animation</option>
       <option value="Web design">Web design</option>
@@ -775,7 +775,7 @@
       <option value="Event Management">Event Management</option>
   </select><br>
      <label>About</label><br>
-  <textarea row="5" col="20" id="des" placeholder="write a few lines that best describe you">
+  <textarea row="5" col="20" id="des" name="About" placeholder="write a few lines that best describe you">
 
   </textarea> 
 
