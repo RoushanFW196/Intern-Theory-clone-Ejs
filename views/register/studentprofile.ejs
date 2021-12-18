@@ -588,9 +588,17 @@
 
 </head>
 <body>
-    <p id="localStor"><%= user._id %></p>
+    <div id="localStor">
+        <p id="userid"><%= user._id %></p>
+        <p id="usergen"><%= user.gender %></p>
+        <p id="userfir"><%= user.first_Name %></p>
+        <p id="userlast"><%= user.last_name %></p>
+        <p id="useremail"><%= user.email %></p>
+        <p id="usermobile"><%= user.mobile %></p>
+    </div>
+   
     <div id="nn123">
-        <%- include('../partials/navbar') %>
+        <%- include('../partials/afterLoginNavbar') %>
     </div>
       <div id="box">
         <div id="leftpicbox">
@@ -867,30 +875,59 @@
 
         
 </div> 
-      <div id="footer"></div> 
+<div id="footer">
+    <%- include('../partials/footer') %>
+</div>
 
 </body>
 </html>
 
 <script>
-  
-let localStor=document.getElementById("localStor").textContent
-localStorage.setItem("userid",JSON.stringify(localStor))
-console.log(localStor)
 
-let user_info1={
-    Gender:"Male",
-    first:"deepak",
-    last:"saini",
-    email:"12sdkjfk",
-    mobile:"kdsjfkja"
+
+  
+$('.btn').click(function () {
+        $(this).toggleClass("click");
+        $('.sidebar').toggleClass("show");
+    });
+
+    $('.feat-btn').click(function () {
+        $('nav ul .feat-show').toggleClass("show");
+    });
+    $('.feat1-btn').click(function () {
+        $('nav ul .feat1-show').toggleClass("show1");
+    });
+    $('.feat2-btn').click(function () {
+        $('nav ul .feat2-show').toggleClass("show2");
+    });
+
+  
+
+  
+
+
+let userdetails={
+  userid:window.userid.textContent,
+  usergen:window.usergen.textContent,
+  userfir:window.userfir.textContent,
+  userlast:window.userlast.textContent,
+  useremail:window.useremail.textContent,
+  usermobile:window.usermobile.textContent,
 }
+
+
+localStorage.setItem("user_info1",JSON.stringify(userdetails))
+
+
+
+let user_info1=JSON.parse(localStorage.getItem("user_info1"))
+console.log(user_info1)
 
 function appenditeminleftdiv(){
      let updiv = document.createElement("div");
        updiv.setAttribute("id","updiv")
      let image= document.createElement("img");
-         if(user_info1.Gender=="Male"){
+         if(user_info1.usergen=="Male"){
              image.src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg"
          }
         else{
@@ -901,14 +938,14 @@ function appenditeminleftdiv(){
        btn.textContent ="GO TO DASHBOARD"
         // btn.onclick =gotodashboard;
        let p1=document.createElement("p");
-       p1.textContent =user_info1.first+ " "+user_info1.last;
+       p1.textContent =user_info1.userfir+ " "+user_info1.userlast;
        let dndiv=document.createElement("div");
        dndiv.setAttribute("id","dndiv")
       let p2=document.createElement("p");
-       p2.textContent ="Email:"+" "+user_info1.email;
+       p2.textContent ="Email:"+" "+user_info1.useremail;
 
        let p3=document.createElement("p");
-       p3.textContent ="Mobile:"+" "+user_info1.mobile;
+       p3.textContent ="Mobile:"+" "+user_info1.usermobile;
 
        dndiv.append(p2,p3)
   updiv.append(image,btn,p1)
@@ -926,7 +963,8 @@ function appenditeminleftdiv(){
 let imdv=document.createElement("div");
 imdv.setAttribute("id","imdv")
 let image= document.createElement("img");
- if(user_info1.Gender=="Male"){
+ if(user_info1.usergen=="Male"){
+     
      image.src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg"
  }
 else{
@@ -939,7 +977,7 @@ document.getElementById("d1").append(imdv);
 let txdv=document.createElement("div");
 txdv.setAttribute("id", "txdv");
 let p1=document.createElement("p");
-p1.textContent =user_info1.first+" "+user_info1.last;
+p1.textContent =user_info1.userfir+" "+user_info1.userlast;
 
 let btndv=document.createElement("div");
 btndv.setAttribute("id","btndv")
