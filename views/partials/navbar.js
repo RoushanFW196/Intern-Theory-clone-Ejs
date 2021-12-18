@@ -1,4 +1,8 @@
-<nav id="navbar">
+function nbar12345(){
+
+    return ` 
+
+  <nav id="navbar">
     <div id="left_div" >
         <div id="humburger" ><img class='btn' src="https://static.thenounproject.com/png/703781-200.png"  /></div>
         <a href="/InternTheory"><img id="navbar_intern_logo" src="https://assets.interntheory.com/creative/logo.png"/></a>
@@ -63,4 +67,8 @@
         <button id="signin"><a href="/login/new">SIGN IN</a></button>
             
     </div> 
-</nav>
+</nav>`
+}
+
+
+export default nbar12345

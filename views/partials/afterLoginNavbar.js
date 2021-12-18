@@ -1,4 +1,6 @@
+function n12345(){
 
+    return `
 <nav id="navbar">
     <div id="left_div" >
         <div id="humburger" ><img class='btn' src="https://static.thenounproject.com/png/703781-200.png"  /></div>
@@ -28,7 +30,7 @@
             <ul>
                 <li><a href="#"><i class="fas fa-th-large"></i><b>Dashboard</b></a></li>
             <li><a href="http://localhost:2345/login/profile"><i class="fas fa-user-circle"></i><b>Profile</b></a></li>
-            <li id="/internships"><a href="#"><i class="fas fa-list"></i><b>Internship</b></a></li>
+            <li id=""><a href="/internships"><i class="fas fa-list"></i><b>Internship</b></a></li>
                 <li id="jobsBtn"><a href="/jobs"><i class="fas fa-business-time"></i><b>Jobs</b></a></li>
             <li> <a href="/courses" ><i class="fas fa-file"></i><b>Courses</b></a></li>
             <li><a href="#"><i class="fas fa-dollar-sign"></i><b>Transactions</b></a></li>
@@ -49,4 +51,7 @@
     </div> </a>
         
 </div> 
-</nav>
+</nav>`
+}
+
+export default n12345;

@@ -29,7 +29,6 @@
 
 <body>
     <div id="nn123">
-        <%- include('../partials/navbar') %>
     </div>
     
     <form action="/login" method="post" enctype="multipart/form-data" onsubmit=""> 
@@ -87,81 +86,71 @@
     </form>
     <div id="loginformstr"></div>
 
-    <div id="footer"></div>
+    <div id="footer">
+        <%- include('../partials/footer') %>
+    </div>
 </body>
 
 </html>
 
-<!-- <script type="module">
-    import loginForm from './component/login.js'
-    import validation from './script/loginUser.js'
-    import { product, showData, hello , afterLogout} from './script/showData.js'
-    document.getElementById('loginformstr').innerHTML = loginForm("company", 'interns', "loginCompany.html", "registerStudent.html")
 
-    validation("studentDetail")
+<script type="module">
 
-    let localStorageData = JSON.parse(localStorage.getItem('studentDetail'))
+    let user_info = JSON.parse(localStorage.getItem("user_info1"))
+    
+    import  {n12345,nbar12345 , afterLogout}  from '/js/navbar.js'
+    
 
-import { n12345, footer1235 } from './component/after_nav.js'
-import { n1234, footer123 } from './component/n123.js'
-
-
-if (localStorageData == null) {
-    document.getElementById('nn123').innerHTML = n1234();
-    document.getElementById('footer').innerHTML = footer123();
-}
-
-else {
-
+    if (user_info === null ) {
+        document.getElementById('nn123').innerHTML = nbar12345();
+    }
+    
+    else {
+    
         document.getElementById('nn123').innerHTML = n12345();
-        document.getElementById('footer').innerHTML = footer1235();
-
-        afterLogout()
+    
         let name = document.getElementById('name');
-        name.innerText = localStorageData.first + " " +localStorageData.last;
- 
-        let mail = document.getElementById('mail');
-        mail.innerText = localStorageData.email;
-        
+            name.innerText = user_info.userfir + " " +user_info.userlast;
+    
+            let mail = document.getElementById('mail');
+            mail.innerText = user_info.useremail;
+            
+            let phno = document.getElementById('phno');
+            phno.innerHTML= user_info.usermobile;
 
-        let phno = document.getElementById('phno');
-        phno.innerText = localStorageData.mobile;
-
-        let profile_img1 = document.getElementById('profile_img1');
-        let profile_img2 = document.getElementById('profile_img2');
-       
-        if(localStorageData.Gender === "Male"){
-            profile_img1.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
-            profile_img2.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
-         }
-        else{
-            profile_img1.src ="https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
-            profile_img2.src = "https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
-        }
-}
-
-    let InternshipBtn = document.getElementById('InternshipBtn')
-    let jobsBtn = document.getElementById('jobsBtn')
-    InternshipBtn.addEventListener('click', () => { hello('Internship', 'All Internships') })
-    jobsBtn.addEventListener('click', () => { hello('Job', 'Fresher Jobs') })
-
-
+            let profile_img1 = document.getElementById('profile_img1');
+            let profile_img2 = document.getElementById('profile_img2');
+    
+    
+            afterLogout();
+            
+            if(user_info.Gender === "Male"){
+                profile_img1.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+                profile_img2.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+             }
+            else{
+                profile_img1.src ="https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+                profile_img2.src = "https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+            }
+    
+    
+    }
+    
+    
     $('.btn').click(function () {
-        $(this).toggleClass("click");
-        $('.sidebar').toggleClass("show");
-    });
-
-    $('.feat-btn').click(function () {
-        $('nav ul .feat-show').toggleClass("show");
-    });
-    $('.feat1-btn').click(function () {
-        $('nav ul .feat1-show').toggleClass("show1");
-    });
-    $('.feat2-btn').click(function () {
-        $('nav ul .feat2-show').toggleClass("show2");
-    });
-
- -->
-
-
-</script>
+            $(this).toggleClass("click");
+            $('.sidebar').toggleClass("show");
+        });
+    
+        $('.feat-btn').click(function () {
+            $('nav ul .feat-show').toggleClass("show");
+        });
+        $('.feat1-btn').click(function () {
+            $('nav ul .feat1-show').toggleClass("show1");
+        });
+        $('.feat2-btn').click(function () {
+            $('nav ul .feat2-show').toggleClass("show2");
+        });
+    
+    </script>
+    

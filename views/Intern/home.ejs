@@ -8,7 +8,7 @@
     <title>Internships and Online Courses for College Students | Intern Theory</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/navbar.css">
-
+    <link rel="stylesheet" href="/css/temp.css">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -20,7 +20,7 @@
     <!-- nav bar using import export fuctionality -->
 
     <div id="nn123">
-        <%- include('../partials/navbar') %>
+
     </div>
 
     <!-- after login nav bar using import export fuctionality -->
@@ -289,22 +289,6 @@
     window.internshipExp7.addEventListener('click', () => { location.href="internships?search=Engineering"  })
     window.AllInternships.addEventListener('click', () => { location.href="internships" })
 
-    $('.btn').click(function () {
-        $(this).toggleClass("click");
-        $('.sidebar').toggleClass("show");
-    });
-
-    $('.feat-btn').click(function () {
-        $('nav ul .feat-show').toggleClass("show");
-    });
-    $('.feat1-btn').click(function () {
-        $('nav ul .feat1-show').toggleClass("show1");
-    });
-    $('.feat2-btn').click(function () {
-        $('nav ul .feat2-show').toggleClass("show2");
-    });
-
-
 </script>
 
 
@@ -354,6 +338,65 @@
         updateSlidePosition();
     }
 
-
-
 </script>
+
+<script type="module">
+
+    let user_info = JSON.parse(localStorage.getItem("user_info1"))
+    
+    import  {n12345,nbar12345 , afterLogout}  from '/js/navbar.js'
+    
+
+    if (user_info === null ) {
+        document.getElementById('nn123').innerHTML = nbar12345();
+    }
+    
+    else {
+    
+        document.getElementById('nn123').innerHTML = n12345();
+    
+        let name = document.getElementById('name');
+            name.innerText = user_info.userfir + " " +user_info.userlast;
+    
+            let mail = document.getElementById('mail');
+            mail.innerText = user_info.useremail;
+            
+            let phno = document.getElementById('phno');
+            phno.innerHTML= user_info.usermobile;
+
+            let profile_img1 = document.getElementById('profile_img1');
+            let profile_img2 = document.getElementById('profile_img2');
+    
+    
+            afterLogout();
+            
+            if(user_info.Gender === "Male"){
+                profile_img1.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+                profile_img2.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
+             }
+            else{
+                profile_img1.src ="https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+                profile_img2.src = "https://assets.interntheory.com/creative/default-images/girlProfile.jpg";
+            }
+    
+    
+    }
+    
+    
+    $('.btn').click(function () {
+            $(this).toggleClass("click");
+            $('.sidebar').toggleClass("show");
+        });
+    
+        $('.feat-btn').click(function () {
+            $('nav ul .feat-show').toggleClass("show");
+        });
+        $('.feat1-btn').click(function () {
+            $('nav ul .feat1-show').toggleClass("show1");
+        });
+        $('.feat2-btn').click(function () {
+            $('nav ul .feat2-show').toggleClass("show2");
+        });
+    
+    </script>
+    
