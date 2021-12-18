@@ -50,9 +50,9 @@ nav{
 }
 
 #user_icon img , #notify_icon img ,#cart_logo img {
-  width: 30px;
+  width: 35px;
   height: 30px;
-  border-radius:50%;
+  /* border-radius:50%; */
 }
 #humburger{
   /* margin-top: 5px; */
