@@ -3,6 +3,7 @@ const express = require('express');
 const ejs = require('ejs');
 const bodyparser = require('body-parser')
 
+
 const registerStudentController = require('./controllers/registerStudent.controller')
 const loginStudentController= require('./controllers/loginStudent.controller');
 const studentprofilesController = require('./controllers/studentprofile.controller.js')

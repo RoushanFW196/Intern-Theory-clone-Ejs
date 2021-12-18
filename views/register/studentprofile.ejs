@@ -599,50 +599,55 @@
 
                 <h5>Personal Details</h5>
                 
+              
+   
+
+            
 
                  <div class="dtl">
                      <div>Name</div>
-                     <div id="n"></div>
+                     
+                     <div id="n"><%=Name%></div>  
                  </div>
 
               <div class="dtl">
                   <div>Gender</div>
-                  <div id="g"></div>
+                  <div id="g"><%=gender%></div>
               </div>
 
                <div class="dtl">
                    <div>DOB</div>
-                   <div id="d"></div>
+                   <div id="d"><%=DOB%></div>
                </div>
 
                <div class="dtl">
                    <div>Languages</div>
-                   <div id="l"></div>
+                   <div id="l"><%=Languages%></div>
                </div>
 
                <div class="dtl">
                    <div>Hobbies</div>
-                   <div id="h"></div>
+                   <div id="h"><%=Hobbies%></div>
                </div>
 
                <div class="dtl">
                    <div>Achievements</div>
-                   <div id="a"></div>
+                   <div id="a"><%=Achievements%></div>
                </div>
 
    <div class="dtl">
        <div>Skills</div>
-       <div id="s"></div>
+       <div id="s"><%=Skills%></div>
    </div>
 
     <div class="dtl">
         <div>Preferences</div>
-        <div id="p"></div>
+        <div id="p"><%=Preferences%></div>
     </div>
 
            <div class="dtl">
                <div>About</div>
-               <div id="ab"></div>
+               <div id="ab"><%=About%></div>
            </div>
 
 
@@ -658,12 +663,12 @@
   <h5>Contact Details</h5>
   <div  class="dtl">
       <div>Email ID</div>
-      <div id="mail"></div>
+      <div id="mail"><%=email%></div>
   </div>
 
     <div  class="dtl">
         <div>Mobile Number</div>
-        <div id="no"></div>
+        <div id="no"><%=mobile%></div>
     </div>
 
      <div  class="dtl">
@@ -686,11 +691,11 @@
      <h5>Address Details</h5>
      <div class="dtl">
          <div>Address</div>
-         <div id="ad"></div>
+         <div id="ad"><%= address%></div>
      </div>
      <div class="dtl">
          <div>City</div>
-         <div id="ct"></div>
+         <div id="ct"><%=City%></div>
      </div>
      <div class="dtl">
          <div>State</div>
@@ -698,7 +703,7 @@
      </div>
      <div class="dtl">
          <div>Pincode</div>
-         <div id="pn"></div>
+         <div id="pn"><%= Pincode%></div>
      </div>
 
 </div>
@@ -710,7 +715,10 @@
     </span>
 
       <h5>Educational Details</h5>
-
+        <h3><%=levelofeducation%></h3>
+        <h3><%=institute%></h3>
+        <h3><%=Degree%></h3>
+        <h3><%=selectyear%></h3>
   </div>
 
 
@@ -785,6 +793,14 @@
   </div>
 
 
+
+
+
+
+
+
+
+
      <div id="update_address" >
    <h1>Address </h1>
              <input type="text" placeholder="Address*" id="address"><br>
@@ -848,388 +864,388 @@
 
 
     <script>
-        var student_detail=JSON.parse(localStorage.getItem("studentDetail"));
+//         var student_detail=JSON.parse(localStorage.getItem("studentDetail"));
   
-        function updateprofile(){
+//         function updateprofile(){
            
-           // var student_detail=JSON.parse(localStorage.getItem("studentDetail"));
-           // console.log(student_detail)
+//            // var student_detail=JSON.parse(localStorage.getItem("studentDetail"));
+//            // console.log(student_detail)
 
-            var fname=document.getElementById("fname").value;
-            var lname=document.getElementById("lname").value;
-             var gender=document.getElementById("gender").value;
-             var dob=document.getElementById("date").value;
-             var lang=document.getElementById("lang").value;
-             var hobby=document.getElementById("hobby").value;
-             var achvmnt=document.getElementById("achiev").value;
-             var skill=document.getElementById("skill").value;
-             var pref=document.getElementById("pref").value;
-           var about=document.getElementById("des").value;
+//             var fname=document.getElementById("fname").value;
+//             var lname=document.getElementById("lname").value;
+//              var gender=document.getElementById("gender").value;
+//              var dob=document.getElementById("date").value;
+//              var lang=document.getElementById("lang").value;
+//              var hobby=document.getElementById("hobby").value;
+//              var achvmnt=document.getElementById("achiev").value;
+//              var skill=document.getElementById("skill").value;
+//              var pref=document.getElementById("pref").value;
+//            var about=document.getElementById("des").value;
 
-          var name= fname +" "+ lname;
+//           var name= fname +" "+ lname;
          
-        //   console.log(name)
-        //   let user_info={}
-        //      user_info. Name= name,
-        //     user_info.Gender=gender,
-        //     user_info. DOB=dob,
-        // user_info.Language=lang,
-        //     user_info.Hobbies=hobby,
-        //     user_info.Achievements=achvmnt,
-        //     user_info.  Skills=skill,
-        //     user_info.Preference=pref,
-        //     user_info.About=about,
+//         //   console.log(name)
+//         //   let user_info={}
+//         //      user_info. Name= name,
+//         //     user_info.Gender=gender,
+//         //     user_info. DOB=dob,
+//         // user_info.Language=lang,
+//         //     user_info.Hobbies=hobby,
+//         //     user_info.Achievements=achvmnt,
+//         //     user_info.  Skills=skill,
+//         //     user_info.Preference=pref,
+//         //     user_info.About=about,
    
           
 
-         // localStorage.setItem("user_profile",JSON.stringify(user_info));
+//          // localStorage.setItem("user_profile",JSON.stringify(user_info));
           
-        // var student_detail=JSON.parse(localStorage.getItem("studentDetail"))
+//         // var student_detail=JSON.parse(localStorage.getItem("studentDetail"))
        
-         student_detail.first=fname;
-         student_detail.last=lname;
-        // student_detail.Name=`${student_detail.first}`+" "+ `${student_detail.last}`;
-        // if(student_detail.Name==undefined){
-        //     student_detail.Name=name;
-        // }
-         student_detail.Name=name;
-    //    console.log(student_detail)
-         student_detail.Gender=gender;
-         student_detail.Dob=dob;
-         student_detail.Language=lang;
-         student_detail.Hobbies=hobby;
-         student_detail.Achievements=achvmnt;
-         student_detail.Skills=skill;
-         student_detail.Preference=pref;
-         student_detail.About=about;
+//          student_detail.first=fname;
+//          student_detail.last=lname;
+//         // student_detail.Name=`${student_detail.first}`+" "+ `${student_detail.last}`;
+//         // if(student_detail.Name==undefined){
+//         //     student_detail.Name=name;
+//         // }
+//          student_detail.Name=name;
+//     //    console.log(student_detail)
+//          student_detail.Gender=gender;
+//          student_detail.Dob=dob;
+//          student_detail.Language=lang;
+//          student_detail.Hobbies=hobby;
+//          student_detail.Achievements=achvmnt;
+//          student_detail.Skills=skill;
+//          student_detail.Preference=pref;
+//          student_detail.About=about;
 
 
-         localStorage.setItem("studentDetail",JSON.stringify(student_detail));
+//          localStorage.setItem("studentDetail",JSON.stringify(student_detail));
           
-      setTimeout(()=>{
-         alert("Your profile is updated")
-          window.location.href="profile.html";
-      },1000)
+//       setTimeout(()=>{
+//          alert("Your profile is updated")
+//           window.location.href="profile.html";
+//       },1000)
             
         
 
-        }
+//         }
 
        
 
-        function Addaddress(){
-            let user_info= JSON.parse(localStorage.getItem("studentDetail")) ;
-          //  console.log(user_info) ;
-            var adrs=document.getElementById("address").value ;
-            var state=document.getElementById("state").value ;
-            var city= document.getElementById("city").value ;
-            var pincode=document.getElementById("pincode").value ;
+//         function Addaddress(){
+//             let user_info= JSON.parse(localStorage.getItem("studentDetail")) ;
+//           //  console.log(user_info) ;
+//             var adrs=document.getElementById("address").value ;
+//             var state=document.getElementById("state").value ;
+//             var city= document.getElementById("city").value ;
+//             var pincode=document.getElementById("pincode").value ;
 
-             user_info.Address=adrs,
-             user_info.city=city,
-             user_info.Pincode=pincode,
-             user_info.State=state
+//              user_info.Address=adrs,
+//              user_info.city=city,
+//              user_info.Pincode=pincode,
+//              user_info.State=state
 
              
-     setTimeout(()=>{
-        alert("Your Address is updated")
-         window.location.href="profile.html";
-     },1000)
+//      setTimeout(()=>{
+//         alert("Your Address is updated")
+//          window.location.href="profile.html";
+//      },1000)
             
-             localStorage.setItem("studentDetail",JSON.stringify(user_info));
-        }
+//              localStorage.setItem("studentDetail",JSON.stringify(user_info));
+//         }
 
 
      
-     function addEducation(){
-        let user_info= JSON.parse(localStorage.getItem("studentDetail")) ;
+//      function addEducation(){
+//         let user_info= JSON.parse(localStorage.getItem("studentDetail")) ;
          
-        var edu=document.getElementById("edu").value ;
-        var insname=document.getElementById("insname").value ;
-        var degree=document.getElementById("degree").value ;
-        var year=document.getElementById("year").value ;
+//         var edu=document.getElementById("edu").value ;
+//         var insname=document.getElementById("insname").value ;
+//         var degree=document.getElementById("degree").value ;
+//         var year=document.getElementById("year").value ;
 
-        user_info.Education=edu,
-        user_info.institute=insname,
-        user_info.Degree=degree,
-        user_info.Year=year
+//         user_info.Education=edu,
+//         user_info.institute=insname,
+//         user_info.Degree=degree,
+//         user_info.Year=year
 
-        alert("Your Educational details are updated")
-     setTimeout(()=>{
-         window.location.href="profile.html";
-     },2000)
-        localStorage.setItem("studentDetail",JSON.stringify(user_info));
-     }
+//         alert("Your Educational details are updated")
+//      setTimeout(()=>{
+//          window.location.href="profile.html";
+//      },2000)
+//         localStorage.setItem("studentDetail",JSON.stringify(user_info));
+//      }
    
 
-      var user_info1= JSON.parse(localStorage.getItem("studentDetail")) ;
+//       var user_info1= JSON.parse(localStorage.getItem("studentDetail")) ;
 
  
 
 
-        //  console.log( "final data from lclstrg,",user_info1)
+//         //  console.log( "final data from lclstrg,",user_info1)
    
    
 
-     function appenditeminleftdiv(){
-     let updiv = document.createElement("div");
-       updiv.setAttribute("id","updiv")
-     let image= document.createElement("img");
-         if(user_info1.Gender=="Male"){
-             image.src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg"
-         }
-        else{
-     image.src="https://assets.interntheory.com/creative/default-images/girlProfile.jpg"
-        }
+//      function appenditeminleftdiv(){
+//      let updiv = document.createElement("div");
+//        updiv.setAttribute("id","updiv")
+//      let image= document.createElement("img");
+//          if(user_info1.Gender=="Male"){
+//              image.src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg"
+//          }
+//         else{
+//      image.src="https://assets.interntheory.com/creative/default-images/girlProfile.jpg"
+//         }
 
-       let btn = document.createElement("button");
-       btn.textContent ="GO TO DASHBOARD"
-        btn.onclick =gotodashboard;
-       let p1=document.createElement("p");
-       p1.textContent =user_info1.first+ " "+user_info1.last;
-       let dndiv=document.createElement("div");
-       dndiv.setAttribute("id","dndiv")
-      let p2=document.createElement("p");
-       p2.textContent ="Email:"+" "+user_info1.email;
+//        let btn = document.createElement("button");
+//        btn.textContent ="GO TO DASHBOARD"
+//         btn.onclick =gotodashboard;
+//        let p1=document.createElement("p");
+//        p1.textContent =user_info1.first+ " "+user_info1.last;
+//        let dndiv=document.createElement("div");
+//        dndiv.setAttribute("id","dndiv")
+//       let p2=document.createElement("p");
+//        p2.textContent ="Email:"+" "+user_info1.email;
 
-       let p3=document.createElement("p");
-       p3.textContent ="Mobile:"+" "+user_info1.mobile;
+//        let p3=document.createElement("p");
+//        p3.textContent ="Mobile:"+" "+user_info1.mobile;
 
-       dndiv.append(p2,p3)
-  updiv.append(image,btn,p1)
-   document.getElementById("leftpicbox").append(updiv,dndiv)
-
-
-
-
-    }
-
-   appenditeminleftdiv();
-
-
-
-    function gotodashboard(){
-        window.location.href="courses.html";
-    }
+//        dndiv.append(p2,p3)
+//   updiv.append(image,btn,p1)
+//    document.getElementById("leftpicbox").append(updiv,dndiv)
 
 
 
 
+//     }
+
+//    appenditeminleftdiv();
 
 
-     function appenddiv1(){
 
-        let imdv=document.createElement("div");
-  imdv.setAttribute("id","imdv")
-        let image= document.createElement("img");
-         if(user_info1.Gender=="Male"){
-             image.src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg"
-         }
-       else{
-        image.src="https://assets.interntheory.com/creative/default-images/girlProfile.jpg"
-       }
+//     function gotodashboard(){
+//         window.location.href="courses.html";
+//     }
 
- imdv.append(image)
-    document.getElementById("d1").append(imdv);
+
+
+
+
+
+//      function appenddiv1(){
+
+//         let imdv=document.createElement("div");
+//   imdv.setAttribute("id","imdv")
+//         let image= document.createElement("img");
+//          if(user_info1.Gender=="Male"){
+//              image.src="https://assets.interntheory.com/creative/default-images/guyProfile.jpg"
+//          }
+//        else{
+//         image.src="https://assets.interntheory.com/creative/default-images/girlProfile.jpg"
+//        }
+
+//  imdv.append(image)
+//     document.getElementById("d1").append(imdv);
      
-    let txdv=document.createElement("div");
-    txdv.setAttribute("id", "txdv");
-    let p1=document.createElement("p");
-    p1.textContent =user_info1.first+" "+user_info1.last;
+//     let txdv=document.createElement("div");
+//     txdv.setAttribute("id", "txdv");
+//     let p1=document.createElement("p");
+//     p1.textContent =user_info1.first+" "+user_info1.last;
      
-      let btndv=document.createElement("div");
-        btndv.setAttribute("id","btndv")
-      let btndv1=document.createElement("div");
-         btndv1.setAttribute("id","btndv1")
-        let span1=document.createElement("span");
-         span1.textContent="VIEW RESUME";
-         let span2=document.createElement("span");
-         span2.textContent="DOWNLOAD RESUME";
+//       let btndv=document.createElement("div");
+//         btndv.setAttribute("id","btndv")
+//       let btndv1=document.createElement("div");
+//          btndv1.setAttribute("id","btndv1")
+//         let span1=document.createElement("span");
+//          span1.textContent="VIEW RESUME";
+//          let span2=document.createElement("span");
+//          span2.textContent="DOWNLOAD RESUME";
 
-         let btndv2=document.createElement("div");
-         btndv2.setAttribute("id","btndv2")
-         let span3=document.createElement("span");
-         span3.textContent="CHANGE PASSWORD";
-   btndv1.append(span1,span2);
+//          let btndv2=document.createElement("div");
+//          btndv2.setAttribute("id","btndv2")
+//          let span3=document.createElement("span");
+//          span3.textContent="CHANGE PASSWORD";
+//    btndv1.append(span1,span2);
 
-   btndv2.append(span3)
-      btndv.append(btndv1,btndv2)
+//    btndv2.append(span3)
+//       btndv.append(btndv1,btndv2)
 
-     txdv.append(p1,btndv);
-     document.getElementById("d1").append(txdv);
+//      txdv.append(p1,btndv);
+//      document.getElementById("d1").append(txdv);
 
-     }
+//      }
    
-    appenddiv1();
+//     appenddiv1();
 
 
-       function appenddiv2(){
+//        function appenddiv2(){
         
 
         
-        if(user_info1.Name==""){
-            document.getElementById("n").innerHTML="N/A";
-        }
-       else{
-        document.getElementById("n").innerHTML=user_info1.first+" "+user_info1.last;
-       }
+//         if(user_info1.Name==""){
+//             document.getElementById("n").innerHTML="N/A";
+//         }
+//        else{
+//         document.getElementById("n").innerHTML=user_info1.first+" "+user_info1.last;
+//        }
 
 
 
-        if(user_info1.Gender==""){
-            document.getElementById("g").innerHTML="N/A";
-        }
-          else{
-            document.getElementById("g").innerHTML=user_info1.Gender;
-          }
+//         if(user_info1.Gender==""){
+//             document.getElementById("g").innerHTML="N/A";
+//         }
+//           else{
+//             document.getElementById("g").innerHTML=user_info1.Gender;
+//           }
 
 
 
-        if(user_info1.Dob==""){
-            document.getElementById("d").innerHTML="N/A";
-        }
-        else{
-            document.getElementById("d").innerHTML=user_info1.Dob;
-        }
+//         if(user_info1.Dob==""){
+//             document.getElementById("d").innerHTML="N/A";
+//         }
+//         else{
+//             document.getElementById("d").innerHTML=user_info1.Dob;
+//         }
 
 
-        if(user_info1.Language==""){
-            document.getElementById("l").innerHTML="N/A";
-        }
-        else{
-            document.getElementById("l").innerHTML=user_info1.Language;
-        }
+//         if(user_info1.Language==""){
+//             document.getElementById("l").innerHTML="N/A";
+//         }
+//         else{
+//             document.getElementById("l").innerHTML=user_info1.Language;
+//         }
 
 
-        if(user_info1.Hobbies==""){
-            document.getElementById("h").innerHTML="N/A";
+//         if(user_info1.Hobbies==""){
+//             document.getElementById("h").innerHTML="N/A";
             
-        }
- else{
+//         }
+//  else{
 
-    document.getElementById("h").innerHTML=user_info1.Hobbies;
-   }
+//     document.getElementById("h").innerHTML=user_info1.Hobbies;
+//    }
 
      
-       if(user_info1.Achievements==""){
-            document.getElementById("a").innerHTML="N/A";
-        }
-         else{
-            document.getElementById("a").innerHTML=user_info1.Achievements;
-         }
+//        if(user_info1.Achievements==""){
+//             document.getElementById("a").innerHTML="N/A";
+//         }
+//          else{
+//             document.getElementById("a").innerHTML=user_info1.Achievements;
+//          }
 
       
-       if(user_info1.Skills==""){
-            document.getElementById("s").innerHTML="N/A";
-        }
-        else{
-            document.getElementById("s").innerHTML=user_info1.Skills;
-        }
+//        if(user_info1.Skills==""){
+//             document.getElementById("s").innerHTML="N/A";
+//         }
+//         else{
+//             document.getElementById("s").innerHTML=user_info1.Skills;
+//         }
      
-       if(user_info1.Preference==""){
-            document.getElementById("p").innerHTML="N/A";
-        }
-        else{
-            document.getElementById("p").innerHTML=user_info1.Preference;
-        }
+//        if(user_info1.Preference==""){
+//             document.getElementById("p").innerHTML="N/A";
+//         }
+//         else{
+//             document.getElementById("p").innerHTML=user_info1.Preference;
+//         }
      
-     if(user_info1.About==""){
-            document.getElementById("ab").innerHTML="N/A";
-        }
-        else{
-            document.getElementById("ab").innerHTML=user_info1.About;
-       }
+//      if(user_info1.About==""){
+//             document.getElementById("ab").innerHTML="N/A";
+//         }
+//         else{
+//             document.getElementById("ab").innerHTML=user_info1.About;
+//        }
       
-       }
+//        }
 
 
-       appenddiv2();
+//        appenddiv2();
 
-       function appenddiv3(){
+//        function appenddiv3(){
 
      
 
-        document.getElementById("mail").innerHTML=user_info1.email;
-        document.getElementById("no").innerHTML=user_info1.mobile;
+//         document.getElementById("mail").innerHTML=user_info1.email;
+//         document.getElementById("no").innerHTML=user_info1.mobile;
       
-        let gdiv= document.createElement("div");
+//         let gdiv= document.createElement("div");
 
-  let gim =document.createElement("img");
-  gim.src="data:image/png;base64,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"
-  let gp=document.createElement("p");
-  gp.textContent=`${user_info1.email}`;
-   gdiv.append(gim,gp)
-   document.getElementById("gac").append(gdiv)
+//   let gim =document.createElement("img");
+//   gim.src="data:image/png;base64,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"
+//   let gp=document.createElement("p");
+//   gp.textContent=`${user_info1.email}`;
+//    gdiv.append(gim,gp)
+//    document.getElementById("gac").append(gdiv)
   
-     let fdiv = document.createElement("div");
-     let fim = document.createElement("img");
-        fim.src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-  let fp=document.createElement("p");
-  fp.textContent="Link Your Facebook Account";
-     fdiv.append(fim,fp);
-      document.getElementById("fbac").append(fdiv)
+//      let fdiv = document.createElement("div");
+//      let fim = document.createElement("img");
+//         fim.src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+//   let fp=document.createElement("p");
+//   fp.textContent="Link Your Facebook Account";
+//      fdiv.append(fim,fp);
+//       document.getElementById("fbac").append(fdiv)
 
-       }
+//        }
 
-    appenddiv3();
+//     appenddiv3();
 
-  function appenddiv4(){
+//   function appenddiv4(){
 
-    if(user_info1.Address==""){
-            document.getElementById("ad").innerHTML="N/A";
-        }
-        else{
-            document.getElementById("ad").innerHTML=user_info1.Address;
-        }
+//     if(user_info1.Address==""){
+//             document.getElementById("ad").innerHTML="N/A";
+//         }
+//         else{
+//             document.getElementById("ad").innerHTML=user_info1.Address;
+//         }
 
 
-        if(user_info1.city==""){
-            document.getElementById("ct").innerHTML="N/A";
-        }
-        else{
+//         if(user_info1.city==""){
+//             document.getElementById("ct").innerHTML="N/A";
+//         }
+//         else{
             
-        document.getElementById("ct").innerHTML=user_info1.city;
-        }
+//         document.getElementById("ct").innerHTML=user_info1.city;
+//         }
 
-        if(user_info1.State==null){
-            document.getElementById("st").innerHTML="N/A";
-        }
-        else{
-            document.getElementById("st").innerHTML=user_info1.State;
-        }
+//         if(user_info1.State==null){
+//             document.getElementById("st").innerHTML="N/A";
+//         }
+//         else{
+//             document.getElementById("st").innerHTML=user_info1.State;
+//         }
 
-        if(user_info1.Pincode==null){
-            document.getElementById("pn").innerHTML="N/A";
-        }
-        else{
-            document.getElementById("pn").innerHTML=user_info1.Pincode;
-        }
+//         if(user_info1.Pincode==null){
+//             document.getElementById("pn").innerHTML="N/A";
+//         }
+//         else{
+//             document.getElementById("pn").innerHTML=user_info1.Pincode;
+//         }
        
 
-  }
+//   }
 
 
 
-   appenddiv4();
-   function appenddiv5(){
+//    appenddiv4();
+//    function appenddiv5(){
 
-    let p1=document.createElement("p");
-    p1.textContent=user_info1.Degree;
-    let p3=document.createElement("p");
-    p3.textContent=user_info1.Education;
-    let p4=document.createElement("p");
-    p4.textContent=user_info1.Year;
-    let p2=document.createElement("p");
-    p2.textContent=user_info1.institute;
+//     let p1=document.createElement("p");
+//     p1.textContent=user_info1.Degree;
+//     let p3=document.createElement("p");
+//     p3.textContent=user_info1.Education;
+//     let p4=document.createElement("p");
+//     p4.textContent=user_info1.Year;
+//     let p2=document.createElement("p");
+//     p2.textContent=user_info1.institute;
 
-  document.getElementById("d5").append(p1,p2,p3,p4)
-
-
-   }
+//   document.getElementById("d5").append(p1,p2,p3,p4)
 
 
+//    }
 
- appenddiv5()
+
+
+//  appenddiv5()
 
 
 
@@ -1248,7 +1264,7 @@
 
 
 
-    </script>
+//     </script>
 
 
 
