@@ -40,3 +40,9 @@ registerStudentSchema.pre("save", function (next) {
   
 
 module.exports = model('registerStudent' , registerStudentSchema)
+
+
+
+
+///  register- mname,mob.emao, cshj state -> profile- name ebmail maikd
+// 

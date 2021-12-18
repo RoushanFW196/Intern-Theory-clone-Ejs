@@ -9,6 +9,7 @@ const upload=require('../middlewares/upload')
 const newToken = (user) => {
     return jwt.sign({ user: user }, process.env.JWT_ACCESS_KEY);
   };
+  
 router.post('/',
 upload.single('image_urls'),
 [

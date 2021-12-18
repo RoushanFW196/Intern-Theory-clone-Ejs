@@ -607,47 +607,47 @@
                  <div class="dtl">
                      <div>Name</div>
                      
-                     <div id="n"><%=Name%></div>  
+                    
                  </div>
 
               <div class="dtl">
                   <div>Gender</div>
-                  <div id="g"><%=gender%></div>
+                  
               </div>
 
                <div class="dtl">
                    <div>DOB</div>
-                   <div id="d"><%=DOB%></div>
+                  
                </div>
 
                <div class="dtl">
-                   <div>Languages</div>
-                   <div id="l"><%=Languages%></div>
+                    <div>Languages</div>
+                   
                </div>
 
                <div class="dtl">
                    <div>Hobbies</div>
-                   <div id="h"><%=Hobbies%></div>
+                 
                </div>
 
                <div class="dtl">
                    <div>Achievements</div>
-                   <div id="a"><%=Achievements%></div>
+                
                </div>
 
    <div class="dtl">
        <div>Skills</div>
-       <div id="s"><%=Skills%></div>
+      
    </div>
 
     <div class="dtl">
         <div>Preferences</div>
-        <div id="p"><%=Preferences%></div>
+       
     </div>
 
            <div class="dtl">
                <div>About</div>
-               <div id="ab"><%=About%></div>
+            
            </div>
 
 
@@ -663,12 +663,12 @@
   <h5>Contact Details</h5>
   <div  class="dtl">
       <div>Email ID</div>
-      <div id="mail"><%=email%></div>
+     
   </div>
 
     <div  class="dtl">
         <div>Mobile Number</div>
-        <div id="no"><%=mobile%></div>
+      
     </div>
 
      <div  class="dtl">
@@ -691,11 +691,11 @@
      <h5>Address Details</h5>
      <div class="dtl">
          <div>Address</div>
-         <div id="ad"><%= address%></div>
+        
      </div>
      <div class="dtl">
          <div>City</div>
-         <div id="ct"><%=City%></div>
+       
      </div>
      <div class="dtl">
          <div>State</div>
@@ -703,7 +703,7 @@
      </div>
      <div class="dtl">
          <div>Pincode</div>
-         <div id="pn"><%= Pincode%></div>
+       
      </div>
 
 </div>
@@ -715,10 +715,7 @@
     </span>
 
       <h5>Educational Details</h5>
-        <h3><%=levelofeducation%></h3>
-        <h3><%=institute%></h3>
-        <h3><%=Degree%></h3>
-        <h3><%=selectyear%></h3>
+        
   </div>
 
 
@@ -737,18 +734,18 @@
 
  
   <div id="update_personal_details">
-      <form action="",method="POST",>
+      <form action="/profile",method="POST" enctype="multipart/form-data",>
     <h1>Update Personal Details</h1>
-    <input type="text" placeholder=" Enter Your First Name*" id="fname"><br>
-    <input type="text" placeholder=" Enter Your Last Name*" id="lname"><br>
-        <select id="gender" placeholder="Gender*">
+    <input type="text" placeholder=" Enter Your First Name*" id="fname" name="first_name"><br>
+    <input type="text" placeholder=" Enter Your Last Name*" id="lname" name="last_name"><br>
+        <!-- <select id="gender" placeholder="Gender*" name="Gender">
            <option value="Male">Male</option>
            <option value="Female">Female</option>
            <option value="Others">Others</option>
        </select><br>
        <label>Date of Birth*</label><br>
-      <input type="date" placeholder="Date of Birth*"id="date"><br>
-      <select id="lang"><br>
+      <input type="date" placeholder="Date of Birth*"id="date" name="DOB"><br>
+      <select id="lang" name="Languages"><br>
         
           <option value="Hindi">Hindi</option>
           <option value="English">English</option>
@@ -759,10 +756,10 @@
           <option value="Chinese">Chinese</option>
          
       </select><br>
-  <input type="text" placeholder="hobbies" id="hobby"><br>
-     <input type="text" placeholder="Achievements" id="achiev"><br>
+  <input type="text" placeholder="hobbies" id="hobby" name="Hobbies"><br>
+     <input type="text" placeholder="Achievements" id="achiev" name="Achievements"><br>
 
-       <select id="skill" placeholder="Skills*">
+       <select id="skill" placeholder="Skills*" name="Skills" >
           
            <option value="Digital Marketing">Digital Marketing</option>
            <option value="consulting">Consulting</option>
@@ -771,7 +768,7 @@
            <option value="Finance">Finance</option>
        </select><br>
 
-  <select id="pref">
+  <select id="pref" name="Preferences">
      
       <option value="Animation">Animation</option>
       <option value="Web design">Web design</option>
@@ -780,13 +777,13 @@
       <option value="Event Management">Event Management</option>
   </select><br>
      <label>About</label><br>
-  <textarea row="5" col="20" id="des" placeholder="write a few lines that best describe you">
+  <textarea row="5" col="20" id="des" name="About" placeholder="write a few lines that best describe you">
 
-  </textarea> 
+  </textarea>  -->
 
      <div>
-         <button onclick="updateprofile()">UPDATE</button>
-         <a href="profile.html">Cancel</a>
+        <input type="submit" value="UPDATE">
+         <a href="/profile/student">Cancel</a>
      </div>
     
   </form>
@@ -822,7 +819,7 @@
 
     <div>
         <button onclick="Addaddress()" >Add</button>
-        <a href="profile.html">Cancel</a>
+        <a href="/profile/student">Cancel</a>
     </div>
     </div> 
 

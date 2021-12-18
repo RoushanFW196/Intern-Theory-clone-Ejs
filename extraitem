@@ -1,0 +1,152 @@
+
+   <div id="nn123"></div> 
+      <div id="box">
+        <div id="leftpicbox"></div>
+      
+        <div id="rightdetailbox">
+
+            <div id="d1"></div>
+            <div id="d2">
+                <span id=upprsn>
+                    <i class="fas fa-pen-square"></i>
+                </span>
+
+                <h5>Personal Details</h5>
+                
+              
+   
+
+            
+
+                 <div class="dtl">
+                     <div>Name</div>
+                     
+                     <!-- <div id="n"><%=Name%></div>   -->
+                 </div>
+
+              <div class="dtl">
+                  <div>Gender</div>
+                  <!-- <div id="g"><%=gender%></div> -->
+              </div>
+
+               <div class="dtl">
+                   <div>DOB</div>
+                   <!-- <div id="d"><%=DOB%></div> -->
+               </div>
+
+               <div class="dtl">
+                   <!-- <div>Languages</div>
+                   <div id="l"><%=Languages%></div> -->
+               </div>
+
+               <div class="dtl">
+                   <div>Hobbies</div>
+                   <!-- <div id="h"><%=Hobbies%></div> -->
+               </div>
+
+               <div class="dtl">
+                   <div>Achievements</div>
+                   <!-- <div id="a"><%=Achievements%></div> -->
+               </div>
+
+   <div class="dtl">
+       <div>Skills</div>
+       <!-- <div id="s"><%=Skills%></div> -->
+   </div>
+
+    <div class="dtl">
+        <div>Preferences</div>
+        <!-- <div id="p"><%=Preferences%></div> -->
+    </div>
+
+           <div class="dtl">
+               <div>About</div>
+               <!-- <div id="ab"><%=About%></div> -->
+           </div>
+
+
+        </div>
+  
+
+       
+    
+    
+
+    <div id="d3">
+       
+  <h5>Contact Details</h5>
+  <div  class="dtl">
+      <div>Email ID</div>
+      <!-- <div id="mail"><%=email%></div> -->
+  </div>
+
+    <div  class="dtl">
+        <div>Mobile Number</div>
+        <!-- <div id="no"><%=mobile%></div> -->
+    </div>
+
+     <div  class="dtl">
+         <div>Facebook Account</div>
+         <div id="fbac"></div>
+     </div>
+
+     <div  class="dtl">
+         <div>Google Account</div>
+         <div id="gac"></div>
+     </div>
+
+</div>
+
+    
+<div id="d4">
+    <span id=upadrs>
+        <i class="fas fa-pen-square"></i>
+    </span>
+     <h5>Address Details</h5>
+     <div class="dtl">
+         <div>Address</div>
+         <!-- <div id="ad"><%= address%></div> -->
+     </div>
+     <div class="dtl">
+         <div>City</div>
+         <!-- <div id="ct"><%=City%></div> -->
+     </div>
+     <div class="dtl">
+         <div>State</div>
+         <div id="st"></div>
+     </div>
+     <div class="dtl">
+         <div>Pincode</div>
+         <!-- <div id="pn"><%= Pincode%></div> -->
+     </div>
+
+</div>
+
+
+  <div id="d5">
+    <span id="aded">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+    </span>
+
+      <h5>Educational Details</h5>
+         <h3><%=levelofeducation%></h3>
+        <h3><%=institute%></h3>
+        <h3><%=Degree%></h3>
+        <h3><%=selectyear%></h3> 
+  </div>
+
+
+
+    </div>
+    
+    </div>
+     
+
+
+
+
+
+
+
+
+ 
