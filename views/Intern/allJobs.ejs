@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/products.css" type="text/css" media="all"> -->
+       <link rel="stylesheet" href="css/internshipAndjob.css" type="text/css" media="all">
+
+    <title>All Jobs</title>
+    <style>
+        body {
+            background-color: #FAFAFA;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        }
+
+        #internAndJobContainer {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 24% 66%;
+            margin: 9rem 0;
+            padding: 1rem;
+        }
+
+        .addvertisment img {
+            max-width: 100%;
+            box-shadow: 0 2px 2px 0 rgb(0 0 0 / 22%);
+        }
+
+        .dis {
+            display: block;
+            margin-left: 1%;
+            border: 1px solid #E0E0E0;
+            background-color: white;
+        }
+
+        .box4 {
+            display: grid;
+            grid-template-columns: 16% 60% 24%;
+            gap: .4rem;
+            margin: 1rem 2rem;
+            border-bottom: 2px dashed rgb(224, 224, 224);
+        }
+
+        .box4>div:nth-child(1) {
+            margin: auto;
+        }
+
+        .box4>div:nth-child(1)>img {
+            max-width: 100%;
+            height: 6rem;
+        }
+
+        .box3 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-around;
+        }
+
+        .box3>p {
+
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: 0.01071em;
+            color: #3C4858;
+            font-size: 0.875rem;
+        }
+
+        .box3>button {
+            cursor: pointer;
+            border: none;
+            background-color: white;
+            color: blue;
+            font-weight: lighter;
+        }
+
+        .box2 {
+            margin-left: 0rem;
+            font-size: medium;
+            color: gray;
+        }
+
+        .box2 h2 {
+            margin: 0px 0px 5px;
+            color: black;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.6;
+            letter-spacing: 0.0075em;
+        }
+
+        .box2 h5,
+        p {
+            margin: 0px 0px 5px;
+            font-size: .875rem;
+        }
+
+        .box1img {
+            width: 90px;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #shareimg {
+            height: 1.5rem;
+            margin-left: 10rem;
+        }
+
+        #hh {
+            color: rgba(0, 0, 0, 0.87);
+            font-size: 1.5rem;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 400;
+            line-height: 1.33;
+            margin-left: 0.7rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main">
+        <div id="yo">
+            <div class="multipleSelection">
+                <div class="selectBox" onclick="showCheckboxes()">
+                    <select id="option">
+                        <option>Cities...</option>
+                    </select>
+                    <div class="overSelect"></div>
+                </div>
+
+                <div id="checkBoxes" style="height: 160px;" class="cb1 filter">
+             
+<label><input type="checkbox" class="city" rel='Delhi'   onchange="change()"   id="first" />Delhi</label>                
+<label><input type="checkbox" class="city" rel='Pune'    onchange="change()" id="second"/> Pune</label>
+<label><input type="checkbox" class="city" rel='Jaipur'  onchange="change()" id="third" />Jaipur</label>
+<label><input type="checkbox" class="city" rel='Mumbai'  onchange="change()" id="fourth" />Mumbai</label>
+<label><input type="checkbox" class="city" rel='Kolkata' onchange="change()" id="five" />Kolkata</label>
+<label><input type="checkbox" class="city" rel='Gurgaon' onchange="change()" id="six" />Gurgaon</label>
+
+
+                </div>
+            </div>
+
+
+            <div class="multipleSelection" id="toggletype">
+                <div class="selectBox" onclick="showCheckboxes1()">
+                    <select id="option">
+                        <option>Type...</option>
+                    </select>
+                    <div class="overSelect"></div>
+                </div>
+
+                <div id="checkBoxes1" class="cb1 filter">
+<label for="first"><input type="checkbox" class="wtype" id="Full" rel='Full Time' onchange="change()" />Full Time</label>
+<label for="second"><input type="checkbox" class="wtype" id="Part" rel='Part Time' onchange="change()" />Part Time</label>
+<label for="third"><input type="checkbox" class="wtype" id="Work" rel='Work From Home' onchange="change()" />Work
+                        From Home</label>
+                </div>
+            </div>
+
+
+            <div class="multipleSelection">
+                <div class="selectBox" onclick="showCheckboxes2()">
+                    <select id="option">
+                        <option>Preference...</option>
+                    </select>
+                    <div class="overSelect"></div>
+                </div>
+
+                <div id="checkBoxes2" style="height: 260px;" class="cb1 filter">
+<label><input type="checkbox" class="preference" id="pref1" rel='Content Writing' onchange="change()" />Content Writing</label>
+<label><input type="checkbox" class="preference" id="pref2" rel='Business Strategy' onchange="change()" />Business Strategy</label>
+<label><input type="checkbox" class="preference" id="pref3" rel='Software Development' onchange="change()" />Software Development</label>
+<label><input type="checkbox" class="preference" id="pref4" rel='E-Commerce' onchange="change()" />E-Commerce</label>
+<label><input type="checkbox" class="preference" id="pref5" rel='Product Designing' onchange="change()" />Product Designing</label>
+ <label><input type="checkbox" class="preference" id="pref6" rel='Marketing' onchange="change()" />Marketing</label>
+<label><input type="checkbox" class="preference" id="pref7" rel='Graphic Designing' onchange="change()" />Graphic Designing</label>
+ <label><input type="checkbox" class="preference" id="pref8" rel='Finance' onchange="change()" />Finance</label>
+<label><input type="checkbox" class="preference" id="pref9" rel='Human Resource' onchange="change()" />Human Resource</label>
+ <label><input type="checkbox" class="preference" id="pref10" rel='Engineering' onchange="change()" />Engineering</label>
+                </div>
+            </div>
+
+
+           
+
+
+            <div>
+                <p>OR</p>
+            </div>
+
+            <div id="filterDiv">
+                <div>
+                    <input id="filterInput" type="text" placeholder="Search...">
+                    <button id="filterBtn" onclick="filiterSearchButton()">SEARCH</button>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div id="internAndJobContainer">
+        <div class="addvertisment">
+            <img src="https://assets.interntheory.com/creative/Internship_left_course_add_01.png">
+        </div>
+
+        <div class="dis">
+
+            <h1 id="hh">All Jobs</h1>
+            <div class="box4">
+                <div class="box1">
+                    <img class="box1img" src="https://assets.interntheory.com/creative/logo.png">
+                </div>
+                <div class="box2">
+                    <h3>Develop Your Skillset</h3>
+                    <p>Online Skill Development Programs
+
+                        Taught by Industry Experts Internship
+
+                        Certified Courses</p>
+                    <p>Guaranteed Internship Opportunities</p>
+                    <h4>Learn Industry-Demanded Skills</h4>
+                </div>
+                <div class="box3">
+                    <p>4-6 Weeks</p>
+                    <img id="shareimg"
+                        src="data:image/png;base64,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"
+                        alt="">
+                    <button><a href="http://localhost:2345/Courses">UPGRADE SKILLS</a></button>
+                </div>
+            </div>
+
+            <% jobs.forEach((job)=>{ %>
+                <div class="box4" id="d1">
+                    <div id="box1">
+                        <img class="box1img" src=<%=job.image %> />
+                    </div>
+
+                    <div class="box2">
+                        <h2>
+                            <%= job.position %>
+                        </h2>
+                        <h5>
+                            <%= job.cname %>
+                        </h5>
+                        <p>
+                            <%= job.Category %>
+                        </p>
+                        <p>
+                            <%= job.city %>
+                        </p>
+
+                        <p>
+                            <%= job.salary %>
+                        </p>
+
+
+                    </div>
+                    <div class="box3">
+                        <p>4 weeks left</p>
+                        <img id="shareimg"
+                            src="data:image/png;base64,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"
+                            alt="">
+                        <button><a  href="jobs/<%=job._id %>">VIEW AND APPLY</a></button>
+                    </div><br>
+                </div>
+              
+                <% }) %>
+
+                <% if(jobs.length==0){ %>
+                 <div id="emptyDiv">
+                    <img id="emptyImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl4wSxyjL-iMSZzRsJcU7wQT1UZzjzuExm7w&usqp=CAU" alt="">
+                    <h5 id="emptyHead">OOPS ! We couldn't match your calibre</h5>
+                    <p>Unfortunately companies are not looking to hire interns for the filters you applied.</p>
+                    <p>If you are looking for something specific which you can not find,</p>
+                    <p>please mail us on studentfeedback@interntheory.com</p>
+                    <p id="emptyPera4">End of search results.</p>
+                 </div>
+
+
+                <% } %>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+
+
+<script>
+    
+    
+function filiterSearchButton() {
+    let filterInput = document.getElementById('filterInput').value;
+    location.href=`jobs?search=${filterInput}`
+}
+
+function change() {
+
+var firstArray=[]
+// var sec
+if(document.getElementById('first').checked) firstArray="Delhi"
+if(document.getElementById('second').checked) firstArray='Pune'
+if(document.getElementById('third').checked) firstArray='Jaipur'
+if(document.getElementById('fourth').checked) firstArray='Mumbai'
+if(document.getElementById('five').checked) firstArray='Kolkata'
+if(document.getElementById('six').checked) firstArray='Gurgaon'
+
+if(firstArray.length>0){
+    console.log(firstArray)
+    location.href=`jobs?c=${firstArray}`
+}
+
+let sec=[]
+if(document.getElementById('Full').checked) sec="Full"
+if(document.getElementById('Part').checked) sec='Part'
+if(document.getElementById('Work').checked) sec='Work'
+
+if(sec.length>0){
+    console.log(sec)
+    location.href=`jobs?t=${sec}`
+}
+
+let thir=[]
+
+if(window.pref1.checked) thir='Content Writing'
+if(window.pref2.checked) thir='Business Strategy'
+if(window.pref3.checked) thir='Software Development'
+if(window.pref4.checked) thir='E-Commerce'
+if(window.pref5.checked) thir='Product Designing'
+if(window.pref6.checked) thir='Marketing'
+if(window.pref7.checked) thir='Graphic Designing'  
+if(window.pref8.checked) thir='Finance'
+if(window.pref9.checked) thir='Human Resource' 
+if(window.pref10.checked) thir='Engineering'
+
+if(thir.length>0){
+    console.log(sec)
+    location.href=`jobs?p=${thir}`
+}
+
+}
+
+let show = true;
+function showCheckboxes() {
+    let checkboxes =
+        document.getElementById("checkBoxes");
+
+    if (show) {
+        checkboxes.style.display = "block";
+        show = false;
+    } else {
+        checkboxes.style.display = "none";
+        show = true;
+    }
+}
+
+
+let show1 = true;
+function showCheckboxes1() {
+    let checkboxes1 =
+        document.getElementById("checkBoxes1");
+
+    if (show1) {
+        checkboxes1.style.display = "block";
+        show1 = false;
+    } else {
+        checkboxes1.style.display = "none";
+        show1 = true;
+    }
+}
+
+let show2 = true;
+function showCheckboxes2() {
+    let checkboxes2 = document.getElementById("checkBoxes2");
+
+    if (show2) {
+        checkboxes2.style.display = "block";
+        show2 = false;
+    } else {
+        checkboxes2.style.display = "none";
+        show2 = true;
+    }
+}
+</script>

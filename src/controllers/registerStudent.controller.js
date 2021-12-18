@@ -1,27 +1,17 @@
 const path =require('path');
-
 const express = require('express');
-
-
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
-
 const { body , validationResult } = require('express-validator');
 const router = express.Router();
-
 const RegisterStudent = require('../models/registerStudent.model');
-const upload=require('../middlewares/upload');
-const e = require('express');
-
-
-
+const upload=require('../middlewares/upload')
 const newToken = (user) => {
     return jwt.sign({ user: user }, process.env.JWT_ACCESS_KEY);
   };
-  
 router.post('/',
- 
 upload.single('image_urls'),
+[
 body('first_Name')
   .notEmpty()
   .withMessage('This field is required'),
@@ -55,30 +45,22 @@ body('first_Name')
   body('lookingFor')
   .notEmpty()
   .withMessage('This field is required') ,
- 
+],
   async (req, res) => {
-
      const errors = validationResult(req);
-
     if(!errors.isEmpty()){
-
-      let newError = errors.array().map(({msg,param, location})=>{
-        return{
-        [param]:msg,
-        }
-      
-      });
-      return res.status(400).json({errors:newError});
+     const alert = errors.array()
+     res.render('register/registerAsStudent.ejs',{
+       alert
+     });
     }
     try {
-      
       let user = await RegisterStudent.findOne({ email: req.body.email }).lean().exec();
       if (user)
         return res.status(400).json({
           status: "failed",
           message: " Please provide a different email address",
         });
-  
       user = await RegisterStudent.create({
                     first_Name : req.body.first_Name,
                     last_name : req.body.last_name,
@@ -91,39 +73,21 @@ body('first_Name')
                     lookingFor :req.body.lookingFor,
                     affilate :req.body.affilate,
                 });
-  
       const token = newToken(user);
-<<<<<<< HEAD
       // res.status(201).json({ user, token });
-     user.save(err => {
-      err?console.log(err):res.send('successfull created Account')
-     });
+      res.render('register/loginAsStudent.ejs',{
 
-=======
-      res.status(201).json({ user, token });
-      console.log(user,token)
-      
->>>>>>> 5e410e8ebbbc2c55e4a97b9bcb2fa863152d9a61
-    } catch (e) {
-      // return res.status(500).json({ status: "failed", message: e.message });
-
-     var message = e.message
-      res.render('register/registerAsStudent' , {
-        message
       })
+    } catch (e) {
+      return res.status(500).json({ status: "failed", message: e.message });
     }
   });
-  
-  
-
 router.get('/new' , async ( req,res) => {
     try{
         const registerStudent = await RegisterStudent.find().lean().exec();
         // res.status(201).send(registerStudent)
         return res.render('register/registerAsStudent',{
-          message : ""
         })
-
     }catch (e) {
         res.status(401).json(
             {
@@ -134,63 +98,18 @@ router.get('/new' , async ( req,res) => {
 })
 
 
-// router.post('/', (req, res) => {
-//                     const first_Name = req.body.first_Name;
-//                     const last_name = req.body.last_name;
-//                     const email = req.body.email;
-//                     const password = req.body.password;
-//                     const mobile = req.body.mobile;
-//                     const city = req.body.city;
-//                     const preference = req.body.preference;
-//                     const howfind = req.body.howfind;
-//                     const lookingFor = req.body.lookingFor;
-//                     const affilate = req.body.affilate;
-
-//                   //  let user = await RegisterStudent.findOne({ email: req.body.email }).lean().exec();
-//                   //         if (user)
-//                   //           return res.status(400).json({
-//                   //             status: "failed",
-//                   //             message: " Please provide a different email address",
-//                   //           });
-
-//   const newUser = new RegisterStudent({
-//     first_Name :first_Name,
-//     last_name : last_name,
-//     email :email,
-//     password : password,
-//     mobile : mobile,
-//     city : city,
-//     preference :preference,
-//     howfind :howfind,
-//     lookingFor : lookingFor,
-//     affilate : affilate,
-//   });
-//   newUser.save((err) => {
-//     err?console.log(err) : res.send("sucessfully created user")
-//   })
-// }) ;
+router.get('/company/new' , async ( req,res) => {
+  try{
+    
+      return res.render('Intern/registerCompany',{
+      })
+  }catch (e) {
+      res.status(401).json(
+          {
+              status : 'Failed' ,
+              message : e.message,
+          });
+  }
+})
 
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
