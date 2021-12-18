@@ -6,7 +6,7 @@ const bodyparser = require('body-parser')
 
 const registerStudentController = require('./controllers/registerStudent.controller')
 const loginStudentController = require('./controllers/loginStudent.controller');
-const studentprofilesController = require('./controllers/studentprofile.controller.js')
+
 const courseController = require("./controllers/course.controller");
 const cartController = require("./controllers/cart.controller");
 
@@ -25,7 +25,7 @@ app.use(bodyparser.urlencoded({ extended: true }))
 
 app.use('/register', registerStudentController);
 app.use("/login", loginStudentController);
-app.use("/profile", studentprofilesController);
+
 app.use("/cart", cartController);
 app.use("/courses", courseController);
 
@@ -36,10 +36,12 @@ app.get('/InternTheory',async function (req,res){
     return res.render("Intern/home",{
     })
 })
+
 app.get('/InternTheory/contact-us',async function (req,res){
     return res.render("Intern/contactus",{
     })
 })
+
 
 
 module.exports = app;

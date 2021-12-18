@@ -13,6 +13,29 @@ const registerStudentSchema =  new Schema({
     howfind : { type : String , required:true},
     lookingFor : { type : String , required:true},
     affilate : { type : String , required:false},
+
+
+    gender : { type : String , default:"N/A"},
+    dob : { type : String , default:"N/A"},
+    language : { type : String , default:"N/A"},
+    hobby : { type : String , default:"N/A"},
+    achivement : { type : String , default:"N/A"},
+    skill : { type : String , default:"N/A"},
+    about : { type : String , default:"N/A"},
+    fb : { type : String , default:"N/A"},
+    google : { type : String , default:"N/A"},
+    address : { type : String , default:"N/A"},
+    state : { type : String , default:"N/A"},
+    pin : { type : String , default:"N/A"},
+
+    leveledu : { type : String , required:false},
+    institute : { type : String , required:false},
+    degree : { type : String , required:false},
+    selyear : { type : String , required:false},
+
+    
+
+
 },{
     versionKey:false,
     timestamps:true,
