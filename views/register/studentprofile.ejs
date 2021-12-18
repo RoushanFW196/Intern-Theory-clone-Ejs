@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/6716631a00.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="./style/temp.css">
+    <link rel="stylesheet" href="/css/temp.css">
        <style>
   #box{
       width:90%;
@@ -585,7 +585,9 @@
 
 </head>
 <body>
-     <div id="nn123"></div> 
+    <div id="nn123">
+        <%- include('../partials/navbar') %>
+    </div>
       <div id="box">
         <div id="leftpicbox"></div>
       
@@ -857,7 +859,9 @@
         <a href="profile.html">Cancel</a>
     </div>
 </div> 
-      <div id="footer"></div> 
+<div id="footer">
+    <%- include('../partials/footer') %>
+</div>
 
 
     <script>
