@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>single product</title>
+    <link rel="stylesheet" href="../css/singlecourse.css">
+</head>
+
+<body>
+    <div id="p_image">
+        <img src="<%= course.image%>" alt="nothing">
+    </div>
+    <!-- https://assets.interntheory.com/creative/courses/thumbnails/it.jpg -->
+    <div class="container">
+        <div class="left">
+            <div class="courseName">
+                <h1>
+                    <%= course.name %>
+                </h1>
+                <p>
+                    <%= course.Des %>
+                </p>
+            </div>
+            <div class="detailsContainer courseName">
+                <div class="detailsContainer1">
+                    <p class="jFVRWL">Key Features</p>
+                    <div class="flexitem">
+                        <div class="f1">
+                            <div class="f1imgdiv"><img
+                                    src="https://assets.interntheory.com/creative/features_icon/certified.png"
+                                    width="70">
+                            </div>
+                            <div class="f1textdiv">
+                                <p><b>Certified</b></p>
+                            </div>
+                        </div>
+                        <div class="f1">
+                            <div class="f1imgdiv"><img
+                                    src="https://assets.interntheory.com/creative/features_icon/study-at-your-own-time.png"
+                                    width="70">
+                            </div>
+                            <div class="f1textdiv">
+                                <p><b>Study At Your Own Time</b></p>
+                            </div>
+                        </div>
+                        <div class="f1">
+                            <div class="f1imgdiv"><img
+                                    src="https://assets.interntheory.com/creative/features_icon/learn-from-professional.png"
+                                    width="70">
+                            </div>
+                            <div class="f1textdiv">
+                                <p><b>Learn from Industry Professionals</b></p>
+                            </div>
+                        </div>
+                        <div class="f1">
+                            <div class="f1imgdiv"><img
+                                    src="https://assets.interntheory.com/creative/features_icon/study-more.png"
+                                    width="70">
+                            </div>
+                            <div class="f1textdiv">
+                                <p><b>More Practise, Less Theory</b></p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <hr style="border: 1px dashed rgb(146, 146, 146);">
+                    <!-- start div -->
+                    <div class="detailsContainer1 mar">
+                        <p class="jFVRWL">What will a student get after the course?</p>
+                        <div class="flexitem">
+                            <div class="f1">
+                                <div class="f1imgdiv"><img
+                                        src="https://assets.interntheory.com/creative/features_icon/certificate-to-upgrade.png"
+                                        width="70"></div>
+                                <div class="f1textdiv">
+                                    <p><b>4 Certificates to upgrade your resume</b></p>
+                                </div>
+                            </div>
+
+                            <div class="f1">
+                                <div class="f1imgdiv"><img
+                                        src="https://assets.interntheory.com/creative/features_icon/internships.png"
+                                        width="70">
+                                </div>
+                                <div class="f1textdiv">
+                                    <p><b>Internship Assistance</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end div -->
+                    <hr style="border: 1px dashed rgb(146, 146, 146);">
+                    <div class="detailsContainer1 mar">
+                        <p class="jFVRWL">Syllabus</p>
+                        <div class="syllabusdiv">
+                            <p class="syllabusdivp1">Web Development Courses</p>
+                            <p class="syllabusdivp2">Click here to see syllabus <span>+</span></p>
+                        </div>
+                        <hr>
+                        <div class="syllabusdiv">
+                            <p class="syllabusdivp1">Data Analytics with R Programming Courses</p>
+                            <p class="syllabusdivp2">Click here to see syllabus <span>+</span></p>
+                        </div>
+                        <hr>
+                        <div class="syllabusdiv">
+                            <p class="syllabusdivp1">Android App Development Using Kotlin courses</p>
+                            <p class="syllabusdivp2">Click here to see syllabus <span>+</span></p>
+                        </div>
+                        <hr>
+                        <div class="syllabusdiv">
+                            <p class="syllabusdivp1">R Programming Coursesd</p>
+                            <p class="syllabusdivp2">Click here to see syllabus <span>+</span></p>
+                        </div>
+                        <hr>
+                    </div>
+
+
+                </div>
+                <hr style="border: 1px dashed rgb(146, 146, 146); margin-top: 30px;">
+            </div>
+
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <div class="courseName">
+                <p class="righttopp">Duration <b>25-30 Weeks</b></p>
+                <hr style="border: 1px dashed rgb(146, 146, 146);">
+                <h2 class="price">₹<%= course.price %><span
+                            style="font-size:14px;text-decoration: line-through; color: grey;margin-left: 10px;">₹<%=
+                                course.price1 %></span>
+                </h2>
+                <button class="pbtn">PROCEED TO CHECKOUT</button>
+                <P class="pp">or</P>
+                <button class="Ebtn">ENROLL NOW</button>
+            </div>
+
+            <div class="courseName mar">
+                <div class="ad">
+                    <div class="bg1">
+                        <h5>confused?</h5>
+                        <p>Leave us a query and we will call you soon.</p>
+                    </div>
+                    <div
+                        style="background-image: url(https://assets.interntheory.com/creative/haveQuestio.png); display:block; background-repeat: no-repeat;background-size: cover;background-position:center">
+                    </div>
+                </div>
+            </div>
+
+            <div class="courseName mar">
+                <p>Similar Courses</p>
+                <hr>
+                <div class="simcourdiv">
+                    <p class="simcourdiv1">Advanced Excel Courses</p>
+                    <p class="simcourdiv2">KNOW MORE <span
+                            style="font-size:13px;text-decoration:line-through; color: grey;margin-left: 210px;">₹5999</span>&nbsp&nbsp<span
+                            style="color: black;">₹2999</span>
+                    </p>
+
+                </div>
+                <hr>
+                <div class="simcourdiv">
+                    <p class="simcourdiv1">Web Development Courses</p>
+                    <p class="simcourdiv2">KNOW MORE <span
+                            style="font-size:13px;text-decoration:line-through; color: grey;margin-left: 210px;">₹7999</span>&nbsp&nbsp<span
+                            style="color: black;">₹3999</span>
+                    </p>
+
+                </div>
+                <hr>
+                <div class="simcourdiv">
+                    <p class="simcourdiv1">Data Analytics With R Programming Courses</p>
+                    <p class="simcourdiv2">KNOW MORE <span
+                            style="font-size:13px;text-decoration:line-through; color: grey;margin-left: 208px;">₹11999</span>&nbsp&nbsp<span
+                            style="color: black;">₹5999</span>
+                    </p>
+
+                </div>
+                <hr>
+
+            </div>
+
+
+        </div>
+        <!-- close rigth part -->
+    </div>
+</body>
+
+</html>
