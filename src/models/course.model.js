@@ -13,4 +13,4 @@ const courseSchema = new Schema({
     timestamps: true,
 });
 
-module.exports = new model("courses", courseSchema)
+module.exports = new model("courses", courseSchema)  

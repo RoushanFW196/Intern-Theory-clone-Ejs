@@ -33,10 +33,10 @@
                                     <%= item.course.name %>
                                 </h4>
                                 <p>
-                                    <%= item.course.price1 %>
+                                    ₹<%= item.course.price1 %>
                                 </p>
                                 <p>
-                                    <%= item.course.price %>
+                                    ₹<%= item.course.price %>
                                 </p>
                                 <hr class="H" />
                             </div>
@@ -246,11 +246,11 @@
         function checker(res, afterpromo, promoInput) {
             if (promoInput === "masai30") {
                 var totalpay = document.getElementById("total")
-                totalpay.textContent = "Rs." + afterpromo;
+                totalpay.textContent = "₹" + afterpromo;
                 localStorage.setItem("totalp", JSON.stringify(afterpromo));
             } else {
                 var totalpay = document.getElementById("total")
-                totalpay.textContent = "Rs" + res;
+                totalpay.textContent = "₹" + res;
                 localStorage.setItem("totalp", JSON.stringify(afterpromo));
 
             }

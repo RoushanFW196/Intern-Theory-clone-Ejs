@@ -60,25 +60,34 @@
         </div>
     </div>
 
-    <a href="http://localhost:7570/cart">CART</a>
+    <a id="cartitems">CART</a>
 
     <script>
 
 
+        let userinfo = JSON.parse(localStorage.getItem('user_info1'));
+
+        // console.log(userinfo.userid, "sdjofsjo");
 
         function addToCart(coursess) {
             // console.log(typeof coursess)
-            fetch('http://localhost:7570/cart', {
+
+            fetch(`/cart`, {
                 method: 'post',
                 headers: {
                     'Accept': 'application/json, text/plain, */*',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ "course": coursess })
+                body: JSON.stringify({
+                    "course": coursess,
+                    "user": userinfo.userid
+                })
             }).then(res => res.json())
                 .then(res => console.log(res));
         }
 
+        let cartitem = document.getElementById("cartitems");
+        cartitem.href = `/cart?user=${userinfo.userid}`
 
 
     </script>
