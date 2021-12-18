@@ -146,7 +146,7 @@
     function deleteItem(id) {
         console.log("yes")
         function deleteProduct() {
-            let res = fetch(`http://localhost:7570/cart/delete/${id}`,
+            let res = fetch(`http://localhost:2345/cart/delete/${id}`,
                 { method: 'DELETE', headers: { 'Content-type': 'application/json' } })
         }
         deleteProduct()
