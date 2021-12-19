@@ -25,6 +25,7 @@ async(req,res)=>{
   
         if(!user){
             return res.status(400).json({status:'failed',message:"username or password incorrect"})
+            // return res.render("register/loginAsStudent.ejs",{message:"yes"}) 
         }
     
         const match=await user.checkPassword(req.body.password)

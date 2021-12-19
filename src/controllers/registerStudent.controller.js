@@ -76,6 +76,7 @@ body('first_Name')
                 });
       const token = newToken(user);
       // res.status(201).json({ user, token });
+
       res.render('register/loginAsStudent.ejs',{
 
       })

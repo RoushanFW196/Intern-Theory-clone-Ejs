@@ -38,6 +38,11 @@
         width: 60%;
     }
 }
+
+#errorMss{
+    color: white;
+    background-color: red;
+}
     </style>
 </head>
 <body>
@@ -49,13 +54,13 @@
                 <h2 class="m-zero">Register Candidate</h2>
             </div>
               <% if(typeof alert != 'undefined' ) { %>
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
                     <p>Please provide valid input</p>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
-
+            </div> -->
+<p id="errorMss">Please Enter Correct Details</p>
          <%  } %> 
 
             <div>
