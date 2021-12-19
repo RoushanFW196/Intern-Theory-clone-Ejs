@@ -126,7 +126,8 @@ body {
     </style>
 </head>
 <body>
-   
+    <div id="nn123">
+    </div>
     <div id="internAndJobContainer1" class="internAndJobContainer">
         <div id="addvertisment">
             <img src="https://assets.interntheory.com/creative/Internship_left_course_add_02.png" alt="addvertisment">
@@ -207,12 +208,13 @@ body {
 <script type="module">
 
     let user_info = JSON.parse(localStorage.getItem("user_info1"))
-    
+    let applybtn2=document.getElementById("applybtn2")
     import  {n12345,nbar12345 , afterLogout}  from '/js/navbar.js'
     
 
     if (user_info === null ) {
         document.getElementById('nn123').innerHTML = nbar12345();
+        applybtn2.addEventListener("click",()=>{location.href="/login/new"})
     }
     
     else {
@@ -230,7 +232,7 @@ body {
 
             let profile_img1 = document.getElementById('profile_img1');
             let profile_img2 = document.getElementById('profile_img2');
-    
+            applybtn2.addEventListener("click",()=>{location.href=`/login/profile/${user_info.userid}`})
     
             afterLogout();
             
@@ -263,4 +265,5 @@ body {
         });
     
     </script>
+    
     

@@ -19,7 +19,7 @@ router.post("/", async (req, res) => {
       req.body
 
     );
-    console.log(post)
+    // console.log(post)
 
     return res.status(201).json({ post });
   } catch (e) {

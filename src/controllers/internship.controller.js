@@ -13,10 +13,10 @@ router.get('/',async function (req,res){
     let ci=req.query.c
     
     let ty=req.query.t
-    console.log('ty:', ty)
+    // console.log('ty:', ty)
 
     let pr=req.query.p
-    console.log('pr:', pr)
+    // console.log('pr:', pr)
 
     let xx=req.query.search
     

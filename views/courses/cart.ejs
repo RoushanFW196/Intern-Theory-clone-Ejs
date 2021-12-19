@@ -150,7 +150,7 @@
 
 
     function deleteItem(id) {
-        console.log("yes")
+        // console.log("yes")
         function deleteProduct() {
             let res = fetch(`http://localhost:2345/cart/delete/${id}`,
                 { method: 'DELETE', headers: { 'Content-type': 'application/json' } })
@@ -200,7 +200,7 @@
 
     function valie() {
 
-        console.log("yes");
+        // console.log("yes");
 
         var cardnumber = document.getElementById("cardNumber").value;
         var expiry = document.getElementById("exp").value;

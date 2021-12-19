@@ -898,7 +898,7 @@ localStorage.setItem("user_info1",JSON.stringify(userdetails))
 
 
 let user_info1=JSON.parse(localStorage.getItem("user_info1"))
-console.log(user_info1)
+// console.log(user_info1)
 
 function appenditeminleftdiv(){
      let updiv = document.createElement("div");
@@ -997,9 +997,9 @@ document.getElementById("upprsn").addEventListener("click",()=>{
 
 function studentUpdate(e,id){
     e.preventDefault()
-    console.log(id)
+    // console.log(id)
     async function updateProduct() {
-        console.log("call or not")
+        // console.log("call or not")
         let data = {
           
             first_Name:document.getElementById("fname").value,
@@ -1030,9 +1030,9 @@ function studentUpdate(e,id){
 
 function updateStudentAddress(e,id){
     e.preventDefault()
-    console.log(id)
+    // console.log(id)
     async function updateProduct() {
-        console.log("call or not")
+        // console.log("call or not")
         let data = {
              address:document.getElementById("address").value,
              state:document.getElementById("state").value,
@@ -1055,10 +1055,10 @@ function updateStudentAddress(e,id){
 
 function updateEducation(e,id){
     e.preventDefault()
-    console.log(id)
+    // console.log(id)
 
     async function updateProduct() {
-        console.log("call or not")
+        // console.log("call or not")
         let data = {
             leveledu:document.getElementById("edu").value,
             institute:document.getElementById("insname").value,

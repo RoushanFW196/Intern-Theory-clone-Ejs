@@ -102,7 +102,7 @@ function n12345(id){
                     </div>
                 </div>
             <ul>
-                <li><a href="#"><i class="fas fa-th-large"></i><b>Dashboard</b></a></li>
+                <li><a href="/login/profile/${id}"><i class="fas fa-th-large"></i><b>Dashboard</b></a></li>
             <li><a href="/login/profile/${id}"><i class="fas fa-user-circle"></i><b>Profile</b></a></li>
             <li id=""><a href="/internships"><i class="fas fa-list"></i><b>Internship</b></a></li>
                 <li id="jobsBtn"><a href="/jobs"><i class="fas fa-business-time"></i><b>Jobs</b></a></li>

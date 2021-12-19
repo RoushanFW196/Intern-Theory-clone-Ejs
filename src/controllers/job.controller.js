@@ -22,7 +22,7 @@ let xx=req.query.search
         }
         else if(ty!=undefined){
             jobs=await Job.find({ "type" : { $regex: `${ty}`, $options: 'i' } })
-            console.log(jobs)
+            // console.log(jobs)
         } 
         else if(pr!=undefined){
             jobs=await Job.find({ "Category" : { $regex: `${pr}`, $options: 'i' } })
