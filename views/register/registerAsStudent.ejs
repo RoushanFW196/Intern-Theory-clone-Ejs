@@ -157,10 +157,10 @@
             let profile_img1 = document.getElementById('profile_img1');
             let profile_img2 = document.getElementById('profile_img2');
     
-    
+    console.log(user_info)
             afterLogout();
             
-            if(user_info.Gender === "Male"){
+            if(user_info.usergen === "Male"){
                 profile_img1.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
                 profile_img2.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
              }
