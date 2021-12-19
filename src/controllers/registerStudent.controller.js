@@ -57,11 +57,12 @@ body('first_Name')
     }
     try {
       let user = await RegisterStudent.findOne({ email: req.body.email }).lean().exec();
-      if (user)
-        return res.status(400).json({
-          status: "failed",
-          message: " Please provide a different email address",
-        });
+      if (user){
+          const alert = errors.array()
+          res.render('register/registerAsStudent.ejs',{
+            alert
+          });
+        }
       user = await RegisterStudent.create({
                     first_Name : req.body.first_Name,
                     last_name : req.body.last_name,

@@ -121,7 +121,7 @@ function n12345(id){
     </div></a>
     <a href="/cart?user=${id}"><div id="cart_logo" > <img src="https://cdn.icon-icons.com/icons2/1369/PNG/512/-shopping-cart_90604.png"  >
     </div> </a>
-    <a  href=""><div id="user_icon"><img id="profile_img2">
+    <a  href="/login/profile/${id}"><div id="user_icon"><img id="profile_img2">
     </div> </a>
         
 </div> 
