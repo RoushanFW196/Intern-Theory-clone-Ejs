@@ -340,6 +340,7 @@
 
 </script>
 
+   
 <script type="module">
 
     let user_info = JSON.parse(localStorage.getItem("user_info1"))
@@ -353,7 +354,7 @@
     
     else {
     
-        document.getElementById('nn123').innerHTML = n12345();
+        document.getElementById('nn123').innerHTML = n12345(user_info.userid);
     
         let name = document.getElementById('name');
             name.innerText = user_info.userfir + " " +user_info.userlast;
@@ -370,7 +371,7 @@
     
             afterLogout();
             
-            if(user_info.Gender === "Male"){
+            if(user_info.usergen === "Male"){
                 profile_img1.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
                 profile_img2.src ="https://assets.interntheory.com/creative/default-images/guyProfile.jpg";
              }

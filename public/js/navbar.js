@@ -61,7 +61,7 @@ function nbar12345(){
 
     <div id="right_div">
         
-        <a href="cart.html"><div id="cart_logo" > <img src="https://th.bing.com/th/id/R.69cb559e0456b62034e80c8394fb507b?rik=yj91OtHM42coXQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_171562.png&ehk=eAehWqyyIlXUjbf8TT8YRFrAzSKFeisj8ZI1A%2biwk6g%3d&risl=&pid=ImgRaw&r=0"  >
+        <a href="/login/new"><div id="cart_logo" > <img src="https://th.bing.com/th/id/R.69cb559e0456b62034e80c8394fb507b?rik=yj91OtHM42coXQ&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_171562.png&ehk=eAehWqyyIlXUjbf8TT8YRFrAzSKFeisj8ZI1A%2biwk6g%3d&risl=&pid=ImgRaw&r=0"  >
         </div> </a>
 
         <button id="signin"><a href="/login/new">SIGN IN</a></button>
@@ -72,7 +72,7 @@ function nbar12345(){
 
 
 
-function n12345(){
+function n12345(id){
 
     return `
 <nav id="navbar">
@@ -103,7 +103,7 @@ function n12345(){
                 </div>
             <ul>
                 <li><a href="#"><i class="fas fa-th-large"></i><b>Dashboard</b></a></li>
-            <li><a href="http://localhost:2345/login/profile"><i class="fas fa-user-circle"></i><b>Profile</b></a></li>
+            <li><a href="/login/profile/${id}"><i class="fas fa-user-circle"></i><b>Profile</b></a></li>
             <li id=""><a href="/internships"><i class="fas fa-list"></i><b>Internship</b></a></li>
                 <li id="jobsBtn"><a href="/jobs"><i class="fas fa-business-time"></i><b>Jobs</b></a></li>
             <li> <a href="/courses" ><i class="fas fa-file"></i><b>Courses</b></a></li>
@@ -119,7 +119,7 @@ function n12345(){
 <div id="right_div">
     <a href=""><div  id="notify_icon"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/notification-1614268-1368970.png" alt="">
     </div></a>
-    <a href="cart.html"><div id="cart_logo" > <img src="https://cdn.icon-icons.com/icons2/1369/PNG/512/-shopping-cart_90604.png"  >
+    <a href="/cart?user=${id}"><div id="cart_logo" > <img src="https://cdn.icon-icons.com/icons2/1369/PNG/512/-shopping-cart_90604.png"  >
     </div> </a>
     <a  href=""><div id="user_icon"><img id="profile_img2">
     </div> </a>

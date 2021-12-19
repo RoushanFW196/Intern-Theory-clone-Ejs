@@ -1082,6 +1082,7 @@ function updateEducation(e,id){
 </script>
 
 
+   
 <script type="module">
 
     let user_info = JSON.parse(localStorage.getItem("user_info1"))
@@ -1095,7 +1096,7 @@ function updateEducation(e,id){
     
     else {
     
-        document.getElementById('nn123').innerHTML = n12345();
+        document.getElementById('nn123').innerHTML = n12345(user_info.userid);
     
         let name = document.getElementById('name');
             name.innerText = user_info.userfir + " " +user_info.userlast;

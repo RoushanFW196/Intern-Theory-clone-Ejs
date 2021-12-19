@@ -130,6 +130,7 @@
 </script>
 
 
+   
 <script type="module">
 
     let user_info = JSON.parse(localStorage.getItem("user_info1"))
@@ -143,7 +144,7 @@
     
     else {
     
-        document.getElementById('nn123').innerHTML = n12345();
+        document.getElementById('nn123').innerHTML = n12345(user_info.userid);
     
         let name = document.getElementById('name');
             name.innerText = user_info.userfir + " " +user_info.userlast;
@@ -157,7 +158,7 @@
             let profile_img1 = document.getElementById('profile_img1');
             let profile_img2 = document.getElementById('profile_img2');
     
-    console.log(user_info)
+    
             afterLogout();
             
             if(user_info.usergen === "Male"){
