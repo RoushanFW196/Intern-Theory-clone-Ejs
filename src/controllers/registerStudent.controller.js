@@ -23,7 +23,7 @@ body('first_Name')
   .custom(async (value) => {
       const isEmail =  /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,20}$/.test(value);
      if(!isEmail){
-        throw new error('Please enter proper email address')
+       withMessage('Please enter proper email address')
      }
       return true;
     })
