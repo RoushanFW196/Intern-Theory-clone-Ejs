@@ -17,12 +17,12 @@ img{
 /* first div */
 
 #first-container{
-  height: 445px;
+  height: 500px;
   background-image: url("https://assets.interntheory.com/creative/Homepage-Banner.png");
 }
 #change-opacity{
 
-    height: 445px;
+    height: 500px;
     background: rgb(68, 100, 120);
     opacity: 0.6;
     position: static;
@@ -30,8 +30,8 @@ img{
 #change-opacity b {
     color: #fff;
     padding: 0px 10px;
-    background: #DF1E2E;
-    font-weight: 800;
+    background: rgb(250, 5, 26);
+    font-weight: 400;
     height: 445px;
     background: rgb(68, 100, 120);
     opacity: 0.6;
@@ -40,8 +40,8 @@ img{
 #change-opacity b {
   color: #fff;
   padding: 0px 10px;
-  background: #DF1E2E;
-  font-weight: 800;
+  background: rgb(243, 7, 26);
+  font-weight: 400;
 
 }
 #change-opacity h5{
