@@ -1,17 +1,24 @@
+
+body{
+  background-color: #f8f8f8;
+}
 .cont {
   background-color: #f8f8f8;
   width: 100%;
   margin-top: 80px;
   margin-bottom: 70px;
+ 
+  margin-top: 100px;
 }
 
-.cart {
+.cart { 
   width: 80%;
   margin: auto;
   background-color: white;
   /* border: 1px solid red; */
   display: grid;
   grid-template-columns: 65% 1% auto;
+  box-shadow: 0px 2px 2px 0px rgb(0 0 0 / 22%);
 }
 
 .vl {
@@ -33,7 +40,7 @@
 
 #showitems div {
   display: grid;
-  grid-template-columns: 5% 18% 63% 7% auto;
+  grid-template-columns: 5% 24% 54% 7% auto;
   grid-gap: 20 px;
 }
 
@@ -50,7 +57,16 @@
 
 #showitems > div > :nth-child(4) {
   text-decoration: line-through;
-  font-size: 15px;
+  font-size: 12px;
+  color: rgba(0,0,0,0.54);
+  font-weight: 400;
+  margin-top: 26px;
+
+}
+#showitems > div > :nth-child(5) {
+  font-weight: 700;
+  font-size: 16px;
+  line-height:24px;
 }
 
 #text {
@@ -90,8 +106,10 @@
 }
 
 .note {
-  color:  rgb(255, 179, 38);
+  color: #ffb326 ;
   text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 span {
@@ -113,7 +131,7 @@ span {
 
 }
 .H {
-  border-top: 1px dashed gray;
+  border-top: 2px dashed #ddd;
 }
 .jss225 {
   color: #3c4858;
@@ -131,6 +149,7 @@ span {
   background-color: red! important;
   color: white;
   border-radius: 50%;
+  margin-top:15px;
   padding: 5px;
 }
 
@@ -150,11 +169,7 @@ span {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .modal-content {
-  /* background-color: #FEFEFE;
-  margin: auto;
-  border: 1px solid #888;
-  width: 22%; */
-  background-color: #FEFEFE; 
+   background-color: #FEFEFE; 
   margin: auto;
   border: 1px solid #888;
   width: 26rem;
@@ -165,6 +180,7 @@ span {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  margin-right: 1rem;
 }
 .close:hover,
 .close:focus {
@@ -173,8 +189,12 @@ span {
   cursor: pointer;
 }
 #main {
-  width: 361px;
-  margin: 8% auto;
+  width: 360px;
+  /* margin: 8% auto; */
+  margin-top:7% ;
+  margin-left: auto;
+  margin-right: auto;
+  margin: bottom 100px;
   box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%),
     0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
 }
@@ -195,7 +215,7 @@ span {
 #language {
   background-color: rgb(184, 17, 17);
   color: white;
-  padding: 10px 15px;
+  padding: 5px 5px;
 }
 #card_option {
   background-color: rgb(252, 230, 230);
@@ -224,13 +244,16 @@ input {
   background-color: hsl(0, 56%, 49%);
   text-align: center;
   color: white;
-  padding: 15px;
-  margin-top: 20px;
+  padding: .4rem;
+  cursor: pointer;
+  /* margin-top: 20px; */
 }
 #logo {
   background-color: white;
   border-radius: 5px;
   padding: 6px;
+  float: right;
+  
 }
 #remember {
   padding: 15px;
@@ -255,3 +278,11 @@ h4 {
   font-weight: 400;
   font-size: 30px;
 }
+
+
+input{
+  outline: none;
+}
+
+
+

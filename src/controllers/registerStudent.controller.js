@@ -100,7 +100,19 @@ router.get('/new' , async ( req,res) => {
 
 
 
-
+router.get('/company/new' , async ( req,res) => {
+  try{
+    
+      return res.render('Intern/registerCompany',{
+      })
+  }catch (e) {
+      res.status(401).json(
+          {
+              status : 'Failed' ,
+              message : e.message,
+          });
+  }
+})
 
 
 
