@@ -15,4 +15,10 @@ Pages Included: Landing page. Internship and Jobs Details. Login and Rgistration
 some snapshots of our cloned website are blow: this is the landing page of the website:
 
 
-
+![Screenshot (623)](https://user-images.githubusercontent.com/91534605/146679971-0b5f9952-947c-4ef4-9e1c-f52763dfe21b.png)
+![Screenshot (624)](https://user-images.githubusercontent.com/91534605/146679973-8529a71f-c963-4841-a812-d350d0713366.png)
+![Screenshot (625)](https://user-images.githubusercontent.com/91534605/146679974-758bd6e9-6ae5-45db-a632-540b63b05e9f.png)
+![Screenshot (626)](https://user-images.githubusercontent.com/91534605/146679975-9cf67ad2-4dae-400c-8f25-bcd879b5f661.png)
+![Screenshot (627)](https://user-images.githubusercontent.com/91534605/146679979-a8f4f809-8bd1-4063-a8e3-5796db818c37.png)
+![Screenshot (628)](https://user-images.githubusercontent.com/91534605/146679980-9f0bdf0c-7ae5-4f9b-9293-e01b346151c6.png)
+![Screenshot (629)](https://user-images.githubusercontent.com/91534605/146679981-56ecf1da-b5cd-4102-9136-99bdf0768cd0.png)
