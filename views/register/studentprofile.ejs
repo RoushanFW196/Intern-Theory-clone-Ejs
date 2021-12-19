@@ -75,6 +75,7 @@
        margin:10px auto;
        padding: 10px;
        border: none;
+       outline: none;
        border-bottom: 2px solid black;
    }
   #update_personal_details select{
@@ -135,7 +136,7 @@
       visibility: hidden;
       padding: 20px 30px;
     box-shadow:   0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
-
+      outline: none;
      position:absolute;
      top: 700px;
      left:30%;
@@ -156,6 +157,7 @@
 
     #update_address input{
         width:80%;
+        outline:none;
        margin:10px auto;
        padding: 10px;
        border: none;
@@ -233,6 +235,7 @@
         width:80%;
        margin:10px auto;
        padding: 10px;
+       outline: none;
        border: none;
        border-bottom: 2px solid black;
     }
@@ -435,12 +438,13 @@
   #d2{
       height: 400px;
       width:100%;
+    
       border-bottom: 1px dashed gray;
   }
     #upprsn{
         float: right;
         position: relative;
-        top:10px;
+         top:10px;
         right:30px;
         background-color:#087CDD;
         padding: 5px;
@@ -450,33 +454,42 @@
 
   #d2 h5{
       color: #3C4858;
-      font-size:16px;
+      font-size:25px;
       line-height:20px;
-      padding:0px 0px 10px ;
+      padding:0px 0px 0px ;
       font-weight: 100;
       margin-left: 20px;
+      
   }
     .dtl{
         width:90%;
         margin:10px ;
         display: flex;
-      
+      line-height:22px;
         font-size:16px;
-        font-weight:400;
+        font-weight:500;
        
     }
     .dtl div:nth-child(1){
      width:30%;
      text-align: left;
-     font-weight: 500;
+     font-weight: 800;
      padding: 4px;
+     font-style: normal;
+     font-size: 14px;
+     line-height:10px;
+     text-decoration:none solid rgba(0, 0, 0, 0.87) ;
  }
 
  .dtl div:nth-child(2){
      width:60%;
      text-align: left;
-    font-weight:400;
+    font-weight:100;
     padding:4px;
+   
+    font-size:14px;
+    line-height:21px;
+
  }
   
      #d3{
@@ -486,11 +499,13 @@
          border-bottom: 1px dashed gray;
      }
 
-       #d3 h5{
+       #d3 h3{
         color: #3C4858;
       font-size:16px;
       line-height:20px;
-      padding:0px 0px 10px ;
+     
+
+      padding:0px 0px 5px ;
       font-weight: 100;
       margin-left: 20px;
        }
@@ -671,7 +686,7 @@
 
     <div id="d3">
        
-  <h5>Contact Details</h5>
+  <h3>Contact Details</h3>
   <div  class="dtl">
       <div>Email ID</div>
       <div id="mail"><%=user.email%></div>
@@ -726,10 +741,10 @@
     </span>
 
       <h5>Educational Details</h5>
-        <h3><%=user.leveledu%></h3>
-        <h3><%=user.institute%></h3>
-        <h3><%=user.degree%></h3>
-        <h3><%=user.selyear%></h3>
+        <p><%=user.leveledu%></p>
+        <p><%=user.institute%></p>
+        <p><%=user.degree%></p>
+        <p><%=user.selyear%></p>
   </div>
 
 
