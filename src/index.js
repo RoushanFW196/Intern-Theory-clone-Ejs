@@ -37,6 +37,11 @@ app.get('/InternTheory',async function (req,res){
     })
 })
 
+app.get('/',async function (req,res){
+    return res.render("Intern/home",{
+    })
+})
+
 app.get('/InternTheory/contact-us',async function (req,res){
     return res.render("Intern/contactus",{
     })
