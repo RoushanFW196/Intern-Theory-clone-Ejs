@@ -25,8 +25,9 @@ Intern theory website provides an opportunity to get an internship with a handso
 6. Cart Page. 
 7. Contact Us Page.
  
-### some snapshots of our cloned website are blow: this is the landing page of the website:
+### some snapshots of our cloned website are below: 
 
+### This is the landing page of the website:
 
 ![Screenshot (623)](https://user-images.githubusercontent.com/91534605/146679971-0b5f9952-947c-4ef4-9e1c-f52763dfe21b.png)
 
