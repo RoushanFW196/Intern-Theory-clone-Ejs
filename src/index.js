@@ -33,7 +33,7 @@ app.use("/jobs",jobController)
 app.use("/internships",internshipController)
 
 app.get('/InternTheory',async function (req,res){
-    return res.render("intern/home",{
+    return res.render("Intern/home",{
     })
 })
 
